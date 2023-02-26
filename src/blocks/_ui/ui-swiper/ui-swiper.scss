@@ -1,0 +1,164 @@
+.ui-swiper {
+  &-buttons {
+    display: flex;
+    gap: 15px;
+    .swiper-button {
+      &-prev,
+      &-next {
+        position: relative;
+        right: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 4px 25px rgb(0 0 0 / 0.1);
+        transition: 0.3s;
+        @include media-laptop {
+          width: 35px;
+          height: 35px;
+        }
+        &::after {
+          display: none;
+        }
+        .svg {
+          width: 14px;
+          height: 14px;
+          color: $red;
+          transition: 0.3s;
+        }
+        &:not(.swiper-button-disabled) {
+          @include media-hover {
+            transform: scale(1.1);
+          }
+        }
+        &.swiper-button-disabled {
+          opacity: 0.7;
+          .svg {
+            color: $grey80;
+          }
+        }
+      }
+    }
+    &--blue {
+      .swiper-button {
+        &-prev,
+        &-next {
+          background: $blue;
+          .svg {
+            color: #fff;
+          }
+          &.swiper-button-disabled {
+            .svg {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-pagination {
+    .swiper-pagination {
+      position: relative;
+      bottom: auto;
+      line-height: 0;
+      &-bullet {
+        width: 6px;
+        height: 6px;
+        transition: 0.3s;
+        &-active {
+          width: 18px;
+          border-radius: 3px;
+          background-color: teal;
+        }
+      }
+    }
+  }
+  &-bullets {
+    .swiper-pagination {
+      position: relative;
+      bottom: 0;
+      font-size: 0;
+      &-horizontal {
+        .swiper-pagination-bullet {
+          margin: 0 4px;
+        }
+      }
+      &-bullet {
+        position: relative;
+        width: 8px;
+        height: 8px;
+        background: transparent;
+        border: 1px solid $red;
+        border-radius: 50%;
+        transition: 0.3s;
+        opacity: 1;
+        &-active {
+          background: $red;
+        }
+      }
+    }
+    &--mt {
+      margin-top: 30px;
+      @include media-laptop {
+        margin-top: 25px;
+      }
+      @include media-tablet {
+        margin-top: 20px;
+      }
+    }
+    &--bg {
+      .swiper-pagination {
+        padding: 6px 15px;
+        background: #fff;
+        border-radius: 50px;
+      }
+    }
+  }
+  &-fraction {
+    .swiper-pagination {
+      position: relative;
+      bottom: auto;
+      display: flex;
+      align-items: center;
+      &-current {
+        font: 22px/1.6 $font;
+        color: red;
+        @include media-tablet {
+          font-size: 18px;
+        }
+      }
+      &-progress {
+        position: relative;
+        width: 18px;
+        height: 1px;
+        margin: 0 7px;
+        background-color: #d1c9be;
+        &-line {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background-color: red;
+          transition-timing-function: linear;
+          &--active {
+            width: 100%;
+          }
+        }
+      }
+      &-total {
+        margin-top: 5px;
+        font: 300 16px/1.5 $font;
+        @include media-tablet {
+          margin-top: 3px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+mixin about(mods)
+  -
+    const baseName = 'about'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .about(class=allMods)&attributes(attributes)
+    h4.about__main ООО «ТоргМаг-Склад» — динамично развивающаяся компания на рынке складского и торгового оборудования
+    .about__row
+      .about__left
+        p Основное направление деятельности нашей компании — оснащение складских, торговых ,архивных и других помещений, оборудованием для увеличения эффективности продаж.
+        p Мы осуществляем проектирование, поставку и монтаж стеллажного и торгового оборудования в сотрудничестве с Опытным заводом «МИКРОН», одним из крупнейших российских производителей стеллажного и торгового оборудования.
+      .about__right
+        .about__text Специалисты нашей компании обладают многолетним опытом успешной работы в данной области. Мы ориентированы на выстраивание долгосрочных взаимовыгодных отношений, и всегда поможем Вам найти оптимальное решение любой, даже самой сложной задачи.
+        .about__resume Мы будем рады сотрудничать с Вами!
+    .about__nums
+      +ui-h2('Мы в цифрах', 'about')
+      .about__wrapper
+        .about__item
+          .about__num > 250
+          .about__descr наименований продукции
+        .about__item
+          .about__num > 10
+            =' '
+            span.about__num-xs лет
+          .about__descr  успешной работы
+        .about__item
+          .about__num > 50
+          .about__descr высококлассных специалистов
+    .about__foot
+      +ui-button('Узнать о нас больше', 'about')
+    block

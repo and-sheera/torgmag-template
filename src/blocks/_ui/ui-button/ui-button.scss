@@ -1,0 +1,57 @@
+.ui-button {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  text-align: center;
+  font: 600 16px/1 $font;
+  color: #fff;
+  background: $red;
+  border: 1px solid $red;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+  @include media-tablet {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  @include media-hover {
+    color: $red;
+    background: #fff;
+  }
+  .svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  &--border {
+    background: transparent;
+    color: $red;
+    @include media-hover {
+      color: #fff;
+      background: $red;
+    }
+  }
+  &--white {
+    color: $red;
+    background: #fff;
+    border-color: #fff;
+    @include media-hover {
+      color: #fff;
+      background: $red;
+      border-color: $red;
+    }
+  }
+  &--text {
+    gap: 5px;
+    color: $blue;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    @include media-hover {
+      background: transparent;
+    }
+  }
+}

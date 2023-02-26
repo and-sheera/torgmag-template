@@ -1,0 +1,26 @@
+mixin banner(mods)
+  -
+    const baseName = 'banner'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .banner(class=allMods)&attributes(attributes)
+    .banner__wrapper.swiper-wrapper
+      -for(let i=0; i<3; i++)
+        .banner__slide.swiper-slide
+          .banner__text
+            h2.banner__title Скидочные карты
+            .banner__descr Постоянным покупателям всегда хорошие скидки
+            .banner__descr.banner__descr--xs При заказе на сумму не менее 1500 ₽
+            .banner__bottom
+              +ui-button('Получить карту', '--white')
+          .banner__img: img(src='../../images/banner.png' alt='')
+    +ui-swiper-buttons('banner')
+    +ui-swiper-bullets('banner, --bg')
+    block

@@ -1,0 +1,49 @@
+mixin special-offers(mods)
+  -
+    const baseName = 'special-offers'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+    const timer = [
+      {
+        num: '0',
+        descr: 'часов'
+      },
+      {
+        num: '0',
+        descr: 'минут'
+      },
+      {
+        num: '0',
+        descr: 'секунд'
+      },
+    ]
+
+  .special-offers(class=allMods)&attributes(attributes)
+    .special-offers__wrapper.swiper-wrapper
+      -for(let i=0; i<3; i++)
+        .special-offers__slide.swiper-slide
+          .special-offers__img: img(src='../../images/catalog-inner-1.jpg' alt='')
+          .special-offers__info
+            h3.special-offers__title Спецпредложение!
+            .special-offers__price
+              .special-offers__price-new 12 489 ₽
+              .special-offers__price-old 18 000 ₽
+            .special-offers__name Крючок для перфорации одинарный 100мм d-4мм, цинк арт. SH504Z-100SX
+            .special-offers__descr Арт. L013414
+            .special-offers__bottom
+              +ui-button('Подробнее', 'special-offers')(href='#')
+              .special-offers__timer(data-end-date='2023-03-01')
+                each item in timer
+                  .special-offers__timer-item
+                    .special-offers__timer-num !{item.num}
+                    .special-offers__timer-descr !{item.descr}
+    +ui-swiper-buttons('special-offers')
+    +ui-swiper-bullets('special-offers')
+    block

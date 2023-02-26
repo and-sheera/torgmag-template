@@ -1,0 +1,49 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'main'
+    const pageTitle = 'Main'
+
+block content
+  main
+    +section('--mt0')
+      .inner
+        +main-aside
+          +catalog('main-aside')
+          .main-aside__content
+            +section('--mt0')
+              +banner
+            +section('--mt25')
+              +benefits
+            +section('--mt60')
+              +section-head
+                +ui-h2('Популярные категории', '--bold')
+              +popular
+            +section('--mt25')
+              +special-offers
+    +section('--bg, --ov-h')
+      .inner
+        +section-head
+          +ui-h2('Наши работы', '--bold')
+          +ui-button('Смотреть все', '--text', '', 'icon_s-arrow-right')
+          +ui-swiper-buttons('section-head, --blue')
+        +our-works
+    +section
+      .inner
+        +section-head
+          +ui-h2('О компании', '--bold')
+        +about
+    +section
+      .inner
+        +section-head
+          +ui-h2('Новости', '--bold')
+          +ui-button('Смотреть все', 'section-head, --text', '', 'icon_s-arrow-right')
+        +news
+    +section('--bg, --ov-h')
+      .inner
+        +section-head
+          +ui-h2('Полезные статьи', '--bold')
+          +ui-button('Смотреть все', '--text', '', 'icon_s-arrow-right')
+          +ui-swiper-buttons('section-head')
+        +articles-slider

@@ -1,0 +1,17 @@
+mixin cart(mods)
+  -
+    const baseName = 'cart'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .cart(class=allMods)&attributes(attributes)
+    button.cart__button
+      +svg('icon_cart')
+      .cart__count 5
+    block

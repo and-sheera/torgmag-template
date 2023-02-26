@@ -1,0 +1,69 @@
+mixin catalog(mods, type)
+  -
+    const baseName = 'catalog'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+    const data = [
+      {
+        icon: '../../images/catalog-1.svg',
+        name: 'Pos-материалы (ценникодержатели, рамки, аксессуары)'
+      },
+      {
+        icon: '../../images/catalog-2.svg',
+        name: 'Весы'
+      },
+      {
+        icon: '../../images/catalog-3.svg',
+        name: 'Витрины, прилавки'
+      },
+    ]
+
+    const inner = [
+      {
+        img: '../../images/catalog-inner-1.jpg',
+        name: 'Торговые стеллажи'
+      },
+      {
+        img: '../../images/catalog-inner-2.jpg',
+        name: 'Алюминиевые рамки и рекламные стенды'
+      },
+      {
+        img: '../../images/catalog-inner-3.jpg',
+        name: 'Подвесные системы'
+      }
+    ]
+
+  .catalog(class=allMods)&attributes(attributes)
+    -for(let i=0; i<5; i++)
+      each item in data
+        .catalog__group
+          a.catalog__item(href='#')
+            .catalog__icon: img(src=item.icon alt='')
+            .catalog__name !{item.name}
+          .catalog__inner
+            .catalog__back
+              +ui-button('Назад', '--text', 'icon_s-arrow-left')
+            -for(let i=0; i<5; i++)
+              each item in inner
+                a.catalog__inner-item(href='#')
+                  .catalog__img: img(src=item.img alt='')
+                  .catalog__inner-name !{item.name}
+    .catalog__group
+      a.catalog__item(href='#')
+        .catalog__icon: img(src='../../images/catalog-1.svg' alt='')
+        .catalog__name Pos-материалы (ценникодержатели, рамки, аксессуары)
+      .catalog__inner
+        .catalog__back
+          +ui-button('Назад', '--text', 'icon_s-arrow-left')
+        each item in inner
+          a.catalog__inner-item(href='#')
+            .catalog__img: img(src=item.img alt='')
+            .catalog__inner-name !{item.name}
+    block

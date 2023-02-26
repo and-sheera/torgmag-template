@@ -1,0 +1,22 @@
+mixin news(mods)
+  -
+    const baseName = 'news'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .news(class=allMods)&attributes(attributes)
+    -for(let i=0; i<3; i++)
+      .news__item
+        .news__img: img(src='../../images/news.jpg' alt='')
+        .news__text
+          .news__date 18.05.2022
+          .news__name Кассовые боксы для магазинов и супермаркетов
+          .news__descr Теперь ассортимент торговых стеллажей стал еще богаче! Мы рады представить вам обновленный каталог, в котором вы найдете много подходящих вариантов для вашего бизнеса! Мы все так же стремимся сохранить конкурентные цены, не теряя при этом качества продукции!
+          +ui-button('Подробнее', 'news, --border')
+    block

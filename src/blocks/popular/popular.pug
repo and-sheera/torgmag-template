@@ -1,0 +1,18 @@
+mixin popular(mods)
+  -
+    const baseName = 'popular'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .popular(class=allMods)&attributes(attributes)
+    -for(let i=0; i<2; i++)
+      a.popular__item(href='#')
+        .popular__img: img(src='../../images/popular.png' alt='')
+        .popular__name Стеллажи торговые и&nbsp;складские
+    block

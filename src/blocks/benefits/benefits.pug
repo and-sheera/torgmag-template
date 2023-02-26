@@ -1,0 +1,20 @@
+mixin benefits(mods)
+  -
+    const baseName = 'benefits'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .benefits(class=allMods)&attributes(attributes)
+    .benefits__item.benefits__item--red
+      .benefits__icon: img(src='../../images/benefit-1.svg' alt='')
+      .benefits__name Быстрая доставка
+    .benefits__item
+      .benefits__icon: img(src='../../images/benefit-2.svg' alt='')
+      .benefits__name Гарантии и&nbsp;сервис
+    block

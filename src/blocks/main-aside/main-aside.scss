@@ -1,0 +1,17 @@
+.main-aside {
+  display: grid;
+  grid-template-columns: 400px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  @include media-laptop {
+    grid-template-columns: 26.455vw minmax(0, 1fr);
+  }
+  @include media-custom(1200px) {
+    display: block;
+  }
+  &__catalog {
+    @include media-custom(1200px) {
+      display: none;
+    }
+  }
+}

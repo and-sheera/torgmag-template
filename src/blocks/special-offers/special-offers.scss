@@ -1,0 +1,205 @@
+.special-offers {
+  position: relative;
+  padding: 30px 85px;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  overflow: hidden;
+  @include media-laptop {
+    padding: 25px 65px;
+  }
+  @include media-tablet {
+    padding: 20px 30px 50px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 117px;
+    background-image: url("data:image/svg+xml,%3Csvg width='160' height='117' viewBox='0 0 160 117' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.8' d='M132.855 5.67298L127.952 -27.2842L95.0651 -22.3917L68.2486 -42.0758L48.6732 -15.4901L15.716 -10.5871L20.6189 22.3701L0.882712 48.8367L27.5205 68.762L32.4131 101.649L65.3703 96.7463L91.8369 116.483L111.762 89.8447L144.649 84.9521L139.757 52.0649L159.441 25.2484L132.855 5.67298ZM52.6878 5.72673C59.5451 4.70658 65.8953 9.41207 66.9259 16.3394C67.4146 19.6241 66.5783 22.9685 64.6012 25.6367C62.6241 28.3049 59.668 30.0784 56.3832 30.5671C49.4559 31.5976 43.1057 26.8922 42.0855 20.0348C41.055 13.1075 45.7605 6.75729 52.6878 5.72673ZM107.758 68.6979C100.901 69.718 94.5401 64.9426 93.5199 58.0852C93.0312 54.8005 93.8675 51.4561 95.8446 48.7879C97.8217 46.1197 100.778 44.3462 104.063 43.8575C110.92 42.8374 117.34 47.5325 118.36 54.3898C118.852 57.6931 118.011 61.0564 116.022 63.7396C114.034 66.4229 111.061 68.2064 107.758 68.6979ZM60.7675 75.9031L48.7102 66.9686L99.5175 -1.59761L111.575 7.33686L60.7675 75.9031Z' fill='%23EFF2F4'/%3E%3C/svg%3E%0A");
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include media-laptop {
+      right: -20px;
+      width: 100px;
+      height: 75px;
+    }
+  }
+  &__wrapper {
+    box-sizing: border-box;
+  }
+  &__slide {
+    display: flex;
+    gap: 30px;
+    @include media-tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__img {
+    width: 195px;
+    height: 260px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    @include media-laptop {
+      width: 170px;
+      height: 225px;
+    }
+    @include media-tablet {
+      width: 160px;
+      height: 215px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 26px;
+    color: $red;
+    margin-bottom: 10px;
+    @include media-laptop {
+      margin-bottom: 5px;
+      font-size: 22px;
+    }
+    @include media-tablet {
+      font-size: 20px;
+    }
+  }
+  &__price {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    @include media-laptop {
+      margin-bottom: 15px;
+    }
+    @include media-tablet {
+      margin-bottom: 10px;
+    }
+    &-new {
+      font-size: 24px;
+      color: $red;
+      @include media-tablet {
+        font-size: 20px;
+      }
+    }
+    &-old {
+      font-size: 15px;
+      color: $grey80;
+      text-decoration-line: line-through;
+      @include media-tablet {
+        font-size: 14px;
+      }
+    }
+  }
+  &__name {
+    max-width: 455px;
+    font-size: 18px;
+    @include media-tablet {
+      font-size: 16px;
+    }
+  }
+  &__descr {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: $grey80;
+    @include media-laptop {
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    @include media-tablet {
+      font-size: 12px;
+    }
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: auto;
+    @include media-tablet {
+      flex-direction: column-reverse;
+      gap: 15px;
+    }
+  }
+  &__timer {
+    display: flex;
+    gap: 8px;
+    @include media-tablet {
+      justify-content: center;
+    }
+    &-item {
+      min-width: 65px;
+      padding: 3px 5px;
+      background: $blue20;
+      border-radius: 4px;
+      text-align: center;
+      @include media-laptop {
+        min-width: 55px;
+      }
+    }
+    &-num {
+      font-weight: 700;
+      font-size: 20px;
+      color: $red;
+      @include media-laptop {
+        font-size: 18px;
+      }
+      @include media-tablet {
+        font-size: 16px;
+      }
+    }
+    &-descr {
+      font-size: 14px;
+      color: $grey80;
+      @include media-laptop {
+        font-size: 12px;
+      }
+    }
+  }
+  &__ui-swiper-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 100%;
+    padding: 0 15px;
+    justify-content: space-between;
+    pointer-events: none;
+    @include media-laptop {
+      padding: 0 10px;
+    }
+    @include media-tablet {
+      display: none;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      pointer-events: all;
+    }
+  }
+  &__ui-swiper-bullets {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    @include media-tablet {
+      display: block;
+    }
+  }
+}

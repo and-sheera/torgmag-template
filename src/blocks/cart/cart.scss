@@ -1,0 +1,43 @@
+.cart {
+  display: inline-block;
+  &__button {
+    position: relative;
+    display: inline-block;
+    padding: 12px;
+    color: $red;
+    background: #fff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    @include media-tablet {
+      padding: 10px;
+    }
+    @include media-hover {
+      color: #fff;
+      background: $red;
+    }
+    .svg {
+      width: 19px;
+      height: 19px;
+    }
+  }
+  &__count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    font: 600 9px/1 $font;
+    text-align: center;
+    color: #fff;
+    background: $red90;
+    border: 1px solid #fff;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 0.15);
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,86 @@
+header.header
+  .header__top
+    .inner
+      ul.header__menu
+        li.header__item.header__item--submenu
+          a(href='#') О нас
+          ul.header__submenu
+            li.header__item
+              a(href='#') Реквизиты
+            li.header__item
+              a(href='#') Вакансии
+        li.header__item
+          a(href='#') Доставка и&nbsp;оплата
+        li.header__item
+          a(href='#') Наши гарантии и&nbsp;сервис
+      .header__city
+        select(name='city' data-ts-select)
+          option(selected) Воронеж
+          option Россошь
+          option Лиски
+        +svg('icon_geo')
+      .header__address
+        .header__address-label Адрес:
+        select(name='city' data-ts-select)
+          option(selected) ул. Остужева, 47
+          option ул. Остужева, 48
+          option ул. Остужева, 49
+  .header__main
+    .inner
+      a.header__logo(href='/')
+        img(src='../../images/logo.svg' alt='')
+      .header__infos
+        .header__info
+          .header__info-label.header__info-label--tel Контакты
+          .header__tel
+            a(href='tel:89202202205') 8-920-220-220-5
+          .header__tel
+            a(href='tel:89515557575') 8-951-555-75-75
+        .header__info
+          .header__info-label.header__info-label--shedule График
+          .header__shedule
+            span ПН
+            span 9:00-16:00
+          .header__shedule
+            span ВС-ПТ
+            span 8:00-16:00
+          .header__shedule
+            span СБ-ВС
+            span 8:00-16:00
+      .header__bans
+        .header__ban.header__ban--red
+          .header__ban-icon: img(src='../../images/ban-icon-1.svg' alt='')
+          .header__ban-title Гарантия лучшей цены
+        .header__ban
+          .header__ban-icon: img(src='../../images/ban-icon-2.svg' alt='')
+          .header__ban-title Скидка 5%
+  .header__bot
+    .inner
+      .header__burger-btn
+        span
+        span
+        span
+      +ui-button('Каталог', 'header, --white', 'icon_catalog')(href='#')
+      a.header__logo(href='/')
+        img(src='../../images/logo.svg' alt='')
+      .header__info.header__info--row
+        .header__info-label.header__info-label--tel Контакты
+        .header__tel
+          a(href='tel:89202202205') 8-920-220-220-5
+        .header__tel
+          a(href='tel:89515557575') 8-951-555-75-75
+      .header__catalog-block
+        +ui-button('Каталог', '', 'icon_catalog')(href='#')
+        +catalog('header', 'header')
+      form.header__search.js-type-res
+        button.header__search-submit(type='submit')
+          +svg('icon_search')
+        input.header__input(placeholder='Поиск по каталогу')
+        .header__results
+          -for(let i=0; i<20; i++)
+            a.header__result(href='#')
+              .header__result-img: img(src='../../images/catalog-inner-1.jpg' alt='')
+              .header__result-name Крючок для перфорации одинарный 100мм d-4мм, цинк арт. SH504Z-100SX
+      +cart('header')
+
+

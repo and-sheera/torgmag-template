@@ -1,0 +1,18 @@
+mixin articles-slider(mods)
+  -
+    const baseName = 'articles-slider'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .articles-slider(class=allMods)&attributes(attributes)
+    .articles-slider__wrapper.swiper-wrapper
+      -for(let i=0; i<5; i++)
+        +article.swiper-slide
+    +ui-swiper-bullets('--mt')
+    block
