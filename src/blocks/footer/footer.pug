@@ -13,6 +13,10 @@
       link: '#'
     },
     {
+      name: 'О нас',
+      link: '#'
+    },
+    {
       name: 'Калькулятор',
       link: '#'
     },
@@ -23,11 +27,7 @@
     {
       name: 'Наши гарантии и&nbsp;сервис',
       link: '#'
-    },
-    {
-      name: 'О нас',
-      link: '#'
-    },
+    }
   ]
 
 footer.footer
@@ -44,19 +44,6 @@ footer.footer
           +ui-button('Напишите нам', 'footer, --border')
         button.footer__to-top
           +svg('icon_arrow-to-top')
-      .footer__offices
-        .footer__title Наши офисы
-        .footer__offices-wrapp
-          .swiper-wrapper
-            -for(let i=0; i<5; i++)
-              .footer__office.swiper-slide
-                .footer__office-address г. Воронеж, ул. Остужева, 47
-                .footer__office-info
-                  .footer__office-tels
-                    a(href='tel:8-920-220-220-5') 8-920-220-220-5
-                    a(href='tel:8-951-555-75-75') 8-951-555-75-75
-                  .footer__office-shedule ПН........9:00-16:00 <br> ВС-ПТ...8:00-16:00 <br> СБ-ВС...8:00-16:00
-          +ui-swiper-buttons('footer')
   .footer__bot
     .inner
       a.footer__logo(href='/')

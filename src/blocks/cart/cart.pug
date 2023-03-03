@@ -14,4 +14,21 @@ mixin cart(mods)
     button.cart__button
       +svg('icon_cart')
       .cart__count 5
+    .cart__main
+      .inner
+        .cart__head
+          +svg('icon_cart')
+          .cart__heading
+            +ui-h2('Ваша корзина', 'cart')
+            .cart__head-count 5
+          button.cart__close
+            +svg('icon_arrow-right')
+        .cart__list
+          -for(let i=0; i<7; i++)
+            +product('cart', 'cart')
+          .cart__empty Ваша корзина пуста
+        .cart__total
+          .cart__total-text Итоговая <br> сумма
+          .cart__total-num 125 489 ₽
+          +ui-button('Оформить заказ', 'cart')(href='#')
     block

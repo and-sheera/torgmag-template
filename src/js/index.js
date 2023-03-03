@@ -17,6 +17,8 @@ import ourWorks from '../blocks/our-works/our-works'
 import articlesSlider from '../blocks/articles-slider/articles-slider'
 import footer from '../blocks/footer/footer'
 import catalog from '../blocks/catalog/catalog'
+import cart from '../blocks/cart/cart'
+import product from '../blocks/product/product'
 
 document.addEventListener('DOMContentLoaded', function () {
   header()
@@ -26,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
   articlesSlider()
   footer()
   catalog()
+  cart()
+  product()
   // uiDatepicker()
   // uiInput()
   // uiRange()
@@ -35,4 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // sliderInit()
   // galleryScripts()
   // tabs()
+})
+
+window.addEventListener('load', () => {
+  document.body.classList.remove('transition-disabled')
 })

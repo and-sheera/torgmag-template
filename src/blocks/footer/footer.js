@@ -19,4 +19,9 @@ export default function footer() {
       prevEl: '.footer__offices-wrapp .ui-swiper-buttons .swiper-button-prev'
     }
   })
+
+  const toTopButton = document.querySelector('.footer__to-top')
+  toTopButton.addEventListener('click', function () {
+    window.scrollTo(0, 0)
+  })
 }

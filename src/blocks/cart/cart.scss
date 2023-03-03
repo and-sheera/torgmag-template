@@ -40,4 +40,181 @@
     box-shadow: 0 3px 6px rgb(0 0 0 / 0.15);
     border-radius: 50%;
   }
+  &__main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100%;
+    padding: 25px 0 40px;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    @include media-laptop {
+      padding: 20px 0;
+    }
+    @include media-tablet {
+      padding: 10px 0;
+    }
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .inner {
+      display: flex;
+      gap: 25px;
+      flex-direction: column;
+      height: 100%;
+      @include media-laptop {
+        gap: 15px;
+      }
+    }
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    background: $blue20;
+    border-radius: 10px;
+    @include media-tablet {
+      gap: 10px;
+      padding: 15px 20px;
+    }
+    > .svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      color: $red;
+      @include media-tablet {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  &__heading {
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+  }
+  &__ui-h2 {
+    color: $blue;
+  }
+  &__head-count {
+    position: relative;
+    top: -0.7em;
+    font-weight: 700;
+    font-size: 20px;
+    color: $red;
+    @include media-tablet {
+      font-size: 16px;
+    }
+  }
+  &__close {
+    margin-left: auto;
+    padding: 5px;
+    background: transparent;
+    border: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    @include media-hover {
+      color: $blue;
+    }
+    .svg {
+      width: 25px;
+      height: 25px;
+      @include media-laptop {
+        width: 22px;
+        height: 22px;
+      }
+      @include media-tablet {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  &__empty {
+    margin: 40px 0;
+    font-size: 18px;
+    color: $grey80;
+    text-align: center;
+    @include media-tablet {
+      font-size: 16px;
+    }
+  }
+  &__list {
+    display: grid;
+    gap: 20px;
+    padding-right: 10px;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 1000px;
+    max-height: calc(100% - 210px);
+    margin: 0 auto;
+    overflow-y: auto;
+    @include media-laptop {
+      gap: 10px;
+      max-height: calc(100% - 180px);
+    }
+    @include media-tablet {
+      max-height: calc(100% - 210px);
+      padding-right: 0;
+    }
+    &::-webkit-scrollbar {
+      @media (min-width: 768px) {
+        width: 5px;
+      }
+    }
+    &::-webkit-scrollbar-thumb {
+      @media (min-width: 768px) {
+        background-color: #d0d0d0;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__total {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 30px;
+    background: $blue20;
+    border-radius: 10px;
+    color: $blue;
+    @include media-tablet {
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 15px 20px;
+    }
+    &-text {
+      font-weight: 600;
+      font-size: 16px;
+      @include media-laptop {
+        font-size: 14px;
+      }
+      @include media-tablet {
+        font-size: 12px;
+      }
+    }
+    &-num {
+      font-weight: 700;
+      font-size: 32px;
+      white-space: nowrap;
+      @include media-laptop {
+        font-size: 30px;
+      }
+      @include media-tablet {
+        font-size: 25px;
+      }
+    }
+    .cart__ui-button {
+      margin-left: auto;
+      @include media-tablet {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
 }

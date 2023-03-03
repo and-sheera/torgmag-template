@@ -1,0 +1,26 @@
+mixin product(mods, type)
+  -
+    const baseName = 'product'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .product(class=allMods)&attributes(attributes)
+    .product__img: img(src='../../images/catalog-inner-1.jpg' alt='')
+    .product__info
+      a.product__name(href='#') Крючок для перфорации одинарный 100мм d-4мм, цинк арт. SH504Z-100SX
+      .product__price 12 489 ₽
+    .product__quantity
+      button.product__quantity-btn(data-quantity-minus)
+        +svg('icon_minus')
+      input.product__quantity-input(type='number' value='1')
+      button.product__quantity-btn(data-quantity-plus)
+        +svg('icon_plus')
+    button.product__delete
+      +svg('icon_plus')
+    block

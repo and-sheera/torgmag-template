@@ -1,0 +1,156 @@
+.product {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 30px;
+  margin-right: 80px;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  transition: 0.3s;
+  @include media-laptop {
+    padding: 15px 20px;
+    margin-right: 65px;
+  }
+  @include media-tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 0;
+  }
+  &__img {
+    width: 112px;
+    height: 150px;
+    flex-shrink: 0;
+    @include media-laptop {
+      width: 90px;
+      height: 120px;
+    }
+    @include media-tablet {
+      width: 112px;
+      height: 150px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    padding: 10px 0;
+    @include media-laptop {
+      padding: 0;
+    }
+  }
+  &__name {
+    display: block;
+    max-width: 450px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    @include media-laptop {
+      font-size: 17px;
+    }
+    @include media-tablet {
+      font-size: 16px;
+    }
+  }
+  &__price {
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 20px;
+    color: $blue;
+    @include media-laptop {
+      font-size: 19px;
+    }
+    @include media-tablet {
+      font-size: 18px;
+    }
+  }
+  &__quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    @include media-tablet {
+      margin: 0 auto;
+    }
+    &-btn {
+      width: 22px;
+      height: 22px;
+      padding: 5px;
+      background: transparent;
+      border: 0;
+      flex-shrink: 0;
+      color: #bdbdbd;
+      transition: 0.3s;
+      cursor: pointer;
+      @include media-hover {
+        color: $blue;
+      }
+    }
+    &-input {
+      width: 50px;
+      padding: 10px 5px;
+      background: $blue20;
+      border: 0;
+      border-radius: 4px;
+      text-align: center;
+      appearance: textfield;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+      }
+    }
+  }
+  &__delete {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 80px);
+    transform: translate(-100%, -50%);
+    display: flex;
+    width: 47px;
+    height: 40px;
+    background: $blue20;
+    border: 0;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+    @include media-laptop {
+      left: calc(100% + 65px);
+    }
+    @include media-tablet {
+      top: 10px;
+      right: 10px;
+      left: unset;
+      transform: none;
+      width: 40px;
+      height: 30px;
+    }
+    @include media-hover {
+      background: $red;
+      .svg {
+        color: #fff;
+      }
+    }
+    .svg {
+      width: 14px;
+      height: 14px;
+      color: $red;
+      margin: auto;
+      @include media-tablet {
+        width: 12px;
+        height: 12px;
+      }
+      &--icon_plus {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
