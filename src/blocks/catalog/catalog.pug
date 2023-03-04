@@ -45,7 +45,9 @@ mixin catalog(mods, type)
       each item in data
         .catalog__group
           a.catalog__item(href='#')
-            .catalog__icon: img(src=item.icon alt='')
+            .catalog__icon
+              include ../../images/catalog-1.svg
+            //- .catalog__icon: img(src=item.icon alt='')
             .catalog__name !{item.name}
           .catalog__inner
             .catalog__back
@@ -57,7 +59,8 @@ mixin catalog(mods, type)
                   .catalog__inner-name !{item.name}
     .catalog__group
       a.catalog__item(href='#')
-        .catalog__icon: img(src='../../images/catalog-1.svg' alt='')
+        .catalog__icon
+          include ../../images/catalog-1.svg
         .catalog__name Pos-материалы (ценникодержатели, рамки, аксессуары)
       .catalog__inner
         .catalog__back

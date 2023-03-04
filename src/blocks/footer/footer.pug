@@ -46,10 +46,15 @@ footer.footer
           +svg('icon_arrow-to-top')
   .footer__bot
     .inner
-      a.footer__logo(href='/')
-        img(src='../../images/logo-footer.svg' alt='')
-      .footer__policy © 2023 ТОРГМАГ <br> Торговое и складское оборудование <br>
-        =' '
-        a(href='#') Политика конфиденциальности
-        =' | '
-        a(href='#') Согласие на обработку персональных данных
+      .footer__company
+        a.footer__logo(href='/')
+          img(src='../../images/logo-footer.svg' alt='')
+        .footer__policy © 2023 ТОРГМАГ <br> Торговое и складское оборудование <br>
+          =' '
+          a(href='#') Политика конфиденциальности
+          =' | '
+          a(href='#') Согласие на обработку персональных данных
+      .footer__counters
+        -for(let i=0; i<3; i++)
+          .footer__counter
+            a(href='#'): img(src='../../images/counter.png' alt='')

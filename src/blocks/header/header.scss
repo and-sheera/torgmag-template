@@ -749,7 +749,12 @@
                 color: #fff;
               }
               &__icon {
-                filter: none;
+                svg {
+                  fill: #fff;
+                  path {
+                    fill: #fff;
+                  }
+                }
               }
             }
           }
@@ -775,9 +780,17 @@
       &__icon {
         width: 25px;
         height: 25px;
-        filter: brightness(0) saturate(100%) invert(19%) sepia(27%) saturate(2156%) hue-rotate(180deg) brightness(90%) contrast(88%);
-        @include media-tablet {
-          filter: none;
+        svg {
+          fill: $blue;
+          @include media-tablet {
+            fill: #fff;
+          }
+          path {
+            fill: $blue;
+            @include media-tablet {
+              fill: #fff;
+            }
+          }
         }
       }
       &__name {
