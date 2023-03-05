@@ -19,6 +19,7 @@ import footer from '../blocks/footer/footer'
 import catalog from '../blocks/catalog/catalog'
 import cart from '../blocks/cart/cart'
 import product from '../blocks/product/product'
+import catalogList from '../blocks/catalog-list/catalog-list'
 
 document.addEventListener('DOMContentLoaded', function () {
   header()
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
   catalog()
   cart()
   product()
+  catalogList()
   // uiDatepicker()
   // uiInput()
   // uiRange()

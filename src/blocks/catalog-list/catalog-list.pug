@@ -1,0 +1,40 @@
+mixin catalog-list(mods)
+  -
+    const baseName = 'catalog-list'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+    const titles = [
+      'Стеллажи торговые и&nbsp;складские',
+      'Холодильное оборудование',
+      'Экономпанели, решетки, фурнитура',
+    ]
+
+    const list = [
+      'Торговые стеллажи',
+      'Перфорированные стеллажи и&nbsp;фурнитура',
+      'Стеллажи грузовые нагрузка 500 кг на полку',
+      'Мезонины',
+      'Паллетные стеллажи',
+    ]
+
+  .catalog-list(class=allMods)&attributes(attributes)
+    -for(let i=0; i<3; i++)
+      each item in titles
+        .catalog-list__item
+          .catalog-list__head
+            .catalog-list__icon
+              include ../../images/catalog-1.svg
+            .catalog-list__title !{item}
+          ul.catalog-list__body
+            each point in list
+              li.catalog-list__line
+                a.catalog-list__name(href='#') !{point}
+                .catalog-list__quantity 10
+    block

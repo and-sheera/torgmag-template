@@ -1,0 +1,25 @@
+mixin page-head(img, title, mods)
+  -
+    const baseName = 'page-head'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .page-head(class=allMods)&attributes(attributes)
+    .page-head__img: img(src=img alt='')
+    .page-head__content
+      .inner
+        +ui-h1(title, 'page-head, --bold')
+        block
+
+mixin page-head__subtitle(text, mods)
+  .page-head__subtitle&attributes(attributes) !{text}
+    block
+
+mixin page-head__descr(text, mods)
+  .page-head__descr&attributes(attributes) !{text}

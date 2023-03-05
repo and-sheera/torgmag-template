@@ -1,43 +1,44 @@
 .breadcrumbs {
-  display: flex;
-  align-items: center;
-  @include media-tablet {
-    overflow-y: auto;
+  position: relative;
+  z-index: 5;
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    @include media-tablet {
+      overflow-y: auto;
+    }
   }
   &__item {
-    position: relative;
-    margin-right: 5px;
-    padding-right: 10px;
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
     white-space: nowrap;
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      width: 6px;
-      height: 1px;
-      background: #aaa;
-    }
     @include media-tablet {
       font-size: 12px;
     }
     &:last-child {
-      margin-right: 0;
-      padding-right: 0;
-      &::after {
-        display: none;
-      }
+      opacity: 0.8;
+    }
+    .svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
     }
   }
   &__link {
-    color: #575757;
     &:hover {
-      color: teal;
+      color: $red;
     }
   }
-  &__text {
-    color: #aaa;
+  &--page-head {
+    margin-top: 15px;
+    margin-bottom: -52px;
+    color: #fff;
+    @include media-tablet {
+      margin-top: 0;
+      margin-bottom: -40px;
+    }
   }
 }

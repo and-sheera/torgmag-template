@@ -10,8 +10,14 @@ mixin breadcrumbs(mods)
       allMods = allMods.trim()
     }
 
-  ul.breadcrumbs(class=allMods)&attributes(attributes)
-    block
+  .breadcrumbs(class=allMods)&attributes(attributes)
+    .inner
+      ul.breadcrumbs__list
+        li.breadcrumbs__item
+          a.breadcrumbs__link(href='/')
+            +svg('icon_home')
+          +svg('icon_s-arrow-right')
+        block
 
 mixin breadcrumbs-item(text, href, mods)
   -
@@ -26,5 +32,6 @@ mixin breadcrumbs-item(text, href, mods)
   li.breadcrumbs__item(class=allMods)&attributes(attributes)
     if(typeof(href) !== 'undefined' && href)
       a.breadcrumbs__link(href=href)!=text
+      +svg('icon_s-arrow-right')
     else
       span.breadcrumbs__text!=text

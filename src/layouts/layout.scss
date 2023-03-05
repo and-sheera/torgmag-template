@@ -94,8 +94,10 @@ blockquote {
     }
   }
   main {
+    --main-pd-t: 20px;
+
     flex: 1 0;
-    padding: 20px 0 70px;
+    padding: var(--main-pd-t) 0 70px;
     @include media-tablet {
       padding-bottom: 50px;
     }

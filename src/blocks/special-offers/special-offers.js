@@ -17,10 +17,9 @@ export default function specialOffers() {
   })
 
   for (const timer of document.querySelectorAll('.special-offers__timer')) {
-    const stringDate = timer.dataset.endDate
+    const stringDate = timer.dataset.endDate.split(' ').join('T') + ':00'
     if (stringDate) {
       const date = new Date(stringDate)
-      date.setHours(0, 0, 0, 0)
 
       if (date.valueOf() - Date.now() > 0) {
         updateTime(stringDate, timer)
@@ -39,7 +38,7 @@ export default function specialOffers() {
 function updateTime(stringDate, timer) {
   const nums = timer.querySelectorAll('.special-offers__timer-num')
   const date = new Date(stringDate)
-  date.setHours(0, 0, 0, 0)
+
   const hours = nums[0]
   const min = nums[1]
   const sec = nums[2]

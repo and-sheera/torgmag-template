@@ -1,0 +1,31 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'catalog'
+    const pageTitle = 'Каталог'
+
+block content
+  main
+    +breadcrumbs('--page-head')
+      //- +breadcrumbs-item('Main', '/')
+      +breadcrumbs-item('Каталог')
+    +page-head('../../images/page-head_catalog.jpg', 'Каталог товаров')
+      +page-head__subtitle('Более')
+        =' '
+        span.page-head__subtitle-xl 2160
+        |  наименований
+      +page-head__descr('Мы осуществляем проектирование, поставку и монтаж стеллажного и торгового оборудования в сотрудничестве с Опытным заводом «МИКРОН», одним из крупнейших российских производителей стеллажного и торгового оборудования.')
+    +section
+      .inner
+        +catalog-list
+    +section
+      .inner
+        +special-offers
+    +section('--bg, --ov-h')
+      .inner
+        +section-head
+          +ui-h2('Полезные статьи', '--bold')
+          +ui-button('Смотреть все', '--text', '', 'icon_s-arrow-right')
+          +ui-swiper-buttons('section-head')
+        +articles-slider
