@@ -3,7 +3,9 @@ import TomSelect from 'tom-select'
 export default function uiSelect() {
   const selects = document.querySelectorAll('.ui-select select')
   for (const select of selects) {
+    const input = select.hasAttribute('placeholder') ? '<input type="text" readonly>' : undefined
     const tomSelect = new TomSelect(select, {
+      controlInput: input,
       onDropdownOpen() {
         const wrapper = select.parentElement.querySelector('.ts-wrapper')
         const list = select.parentElement.querySelector('.ts-dropdown')

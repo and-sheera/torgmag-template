@@ -1,6 +1,6 @@
-mixin ui-select(mods, ...data)
+mixin catalog-inner(mods)
   -
-    const baseName = 'ui-select'
+    const baseName = 'catalog-inner'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,8 +10,5 @@ mixin ui-select(mods, ...data)
       allMods = allMods.trim()
     }
 
-  .ui-select(class=allMods)
-    select&attributes(attributes)
-      each item in data
-        option=item
-      block
+  .catalog-inner(class=allMods)&attributes(attributes)
+    block

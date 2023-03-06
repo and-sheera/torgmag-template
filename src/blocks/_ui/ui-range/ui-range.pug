@@ -11,8 +11,18 @@ mixin ui-range(mods)
     }
 
   .ui-range(class=allMods)&attributes(attributes)
-    .ui-range__value
-      .ui-range__lower
-      .ui-range__upper
+    .ui-range__head
+      .ui-range__item
+        .ui-range__label от
+        .ui-range__control
+          .ui-range__input-val
+          input.ui-range__input(type='text')
+        .ui-range__unit ₽
+      .ui-range__item
+        .ui-range__label до
+        .ui-range__control
+          .ui-range__input-val
+          input.ui-range__input(type='text')
+        .ui-range__unit ₽
     .ui-range__body
     block

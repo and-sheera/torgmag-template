@@ -1,0 +1,16 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'catalog-inner'
+    const pageTitle = 'Стеллажи торговые и складские'
+
+block content
+  main
+    +breadcrumbs('--page-head')
+      +breadcrumbs-item('Стеллажи торговые и складские', '#')
+      +breadcrumbs-item('Торговые стеллажи')
+    +page-head('../../images/page-head_catalog.jpg', 'Стеллажи торговые и&nbsp;складские')
+    +section('--mt-110')
+      .inner
+        +catalog-filter

@@ -53,5 +53,11 @@
     @include media-hover {
       background: transparent;
     }
+    &.ui-button--grey80 {
+      color: $grey80;
+      @include media-hover {
+        color: $black;
+      }
+    }
   }
 }

@@ -1,0 +1,26 @@
+mixin catalog-filter(mods)
+  -
+    const baseName = 'catalog-filter'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  form.catalog-filter(class=allMods)&attributes(attributes)
+    .catalog-filter__container
+      .catalog-filter__item
+        .catalog-filter__label Стоимость
+        +ui-range('catalog-filter')(data-start=[2500, 7500] data-min=100 data-max=10000)
+      .catalog-filter__item
+        .catalog-filter__label Cортировка
+        +ui-select('')
+          option(value='default') По умолчанию
+          option(value='up') По цене вверх
+          option(value='down') По цене вниз
+    .catalog-filter__bottom
+      +ui-button('Сбросить все', '--text, --grey80', 'icon_cross')(type='button')
+    block

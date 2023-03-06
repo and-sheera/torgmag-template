@@ -20,6 +20,7 @@ import catalog from '../blocks/catalog/catalog'
 import cart from '../blocks/cart/cart'
 import product from '../blocks/product/product'
 import catalogList from '../blocks/catalog-list/catalog-list'
+import catalogFilter from '../blocks/catalog-filter/catalog-filter'
 
 document.addEventListener('DOMContentLoaded', function () {
   header()
@@ -32,10 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
   cart()
   product()
   catalogList()
+  catalogFilter()
   // uiDatepicker()
   // uiInput()
-  // uiRange()
-  // uiSelect()
+  uiRange()
+  uiSelect()
   // uiTextarea()
   // uiTooltip()
   // sliderInit()
