@@ -20,6 +20,28 @@ export default function product() {
         productCard.remove()
       }, 300)
     }
+
+    const buyButton = event.target.closest('.product__button')
+    if (buyButton) {
+      const img = buyButton.closest('.product').querySelector('img')
+      const cartButton = document.querySelector('.header__cart .cart__button')
+      if (img) {
+        const animImg = document.createElement('img')
+        animImg.className = 'product__img-anim'
+        animImg.src = img.src
+        animImg.style.top = `${img.getBoundingClientRect().top}px`
+        animImg.style.left = `${img.getBoundingClientRect().left}px`
+        document.body.append(animImg)
+        setTimeout(() => {
+          animImg.classList.add('translate')
+          animImg.style.top = `${cartButton.getBoundingClientRect().top + cartButton.offsetHeight / 2}px`
+          animImg.style.left = `${cartButton.getBoundingClientRect().left + cartButton.offsetWidth / 2}px`
+          setTimeout(() => {
+            animImg.remove()
+          }, 550)
+        }, 300)
+      }
+    }
   })
 
   document.addEventListener('change', (event) => {

@@ -14,3 +14,26 @@ block content
     +section('--mt-110')
       .inner
         +catalog-filter
+    +section('--mt60')
+      .inner
+        +catalog-tags
+    +section
+      .inner
+        +section-head
+          +ui-h2('Торговые стеллажи').ui-blue
+        +catalog-inner
+    +section
+      .inner
+        +section-head
+          +ui-h2('Cтеллажи архивные СТФЛ (100 кг на полку)').ui-blue
+        +catalog-inner
+    +section
+      .inner
+        +special-offers
+    +section('--bg, --ov-h')
+      .inner
+        +section-head
+          +ui-h2('Полезные статьи', '--bold')
+          +ui-button('Смотреть все', '--text', '', 'icon_s-arrow-right')
+          +ui-swiper-buttons('section-head')
+        +articles-slider

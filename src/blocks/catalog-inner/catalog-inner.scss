@@ -1,3 +1,25 @@
 .catalog-inner {
-  position: relative;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    @include media-laptop {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+    }
+    @include media-tablet {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+    }
+  }
+  &__button {
+    margin-top: 40px;
+    text-align: center;
+    @include media-laptop {
+      margin-top: 30px;
+    }
+    @include media-tablet {
+      margin-top: 25px;
+    }
+  }
 }

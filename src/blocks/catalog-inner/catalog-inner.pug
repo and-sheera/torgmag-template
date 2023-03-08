@@ -11,4 +11,9 @@ mixin catalog-inner(mods)
     }
 
   .catalog-inner(class=allMods)&attributes(attributes)
+    .catalog-inner__grid
+      -for(let i=0; i<6; i++)
+        +product
+    .catalog-inner__button
+      +ui-button('Показать еще', '--border')
     block
