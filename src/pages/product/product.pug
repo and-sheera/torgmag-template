@@ -1,0 +1,31 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'product'
+    const pageTitle = 'Стеллаж торговый пристенный с полками 1650'
+
+block content
+  main
+    +breadcrumbs
+      +breadcrumbs-item('Стеллажи торговые и складские', '#')
+      +breadcrumbs-item('Торговые стеллажи', '#')
+      +breadcrumbs-item('Стеллаж торговый пристенный с полками 1650')
+    +section('--mt0')
+      .inner
+        +product('--inner', 'inner')
+    +section('--ov-h')
+      .inner
+        +section-head
+          +ui-h2('Другие товары в этой категории')
+        +product-slider
+    +section
+      .inner
+        +special-offers
+    +section('--bg, --ov-h')
+      .inner
+        +section-head
+          +ui-h2('Полезные статьи', '--bold')
+          +ui-button('Смотреть все', '--text', '', 'icon_s-arrow-right')
+          +ui-swiper-buttons('section-head')
+        +articles-slider

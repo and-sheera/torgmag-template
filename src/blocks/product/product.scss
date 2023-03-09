@@ -29,7 +29,7 @@
   }
   &__img-anim {
     position: fixed;
-    z-index: 1000;
+    z-index: 10000;
     object-fit: contain;
     border-radius: 5px;
     transition: 0.5s;
@@ -106,18 +106,25 @@
     }
   }
   &__button {
-    width: 39px;
-    height: 39px;
-    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px;
     background: $red;
     border: 1px solid $red;
     border-radius: 4px;
     color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
     transition: 0.3s;
     cursor: pointer;
     @include media-hover {
       background: #fff;
       color: $red;
+    }
+    .svg {
+      width: 17px;
+      height: 17px;
     }
   }
   &__quantity {
@@ -195,6 +202,123 @@
       }
       &--icon_plus {
         transform: rotate(45deg);
+      }
+    }
+  }
+  &__main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 25px;
+    @include media-laptop {
+      gap: 15px;
+      justify-content: space-between;
+    }
+    @include media-tablet {
+      margin-top: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    @include media-laptop {
+      gap: 20px;
+    }
+  }
+  &__section {
+    &:not(:first-child) {
+      margin-top: 35px;
+      @include media-laptop {
+        margin-top: 25px;
+      }
+    }
+    &-name {
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+  &__descr {
+    font-size: 16px;
+  }
+  &__props {
+    display: grid;
+    gap: 10px;
+  }
+  &__prop {
+    font-size: 14px;
+    &:first-child {
+      color: $grey80;
+    }
+    &-line {
+      display: flex;
+      gap: 10px;
+    }
+  }
+  &--inner {
+    flex-direction: row;
+    gap: 40px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    @include media-laptop {
+      gap: 30px;
+    }
+    @include media-tablet {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .product {
+      &__img,
+      &__img-anim {
+        width: 450px;
+        height: 600px;
+        margin: 0;
+        border: 1px solid #ebebeb;
+        border-radius: 10px;
+        @include media-laptop {
+          width: 280px;
+          height: 370px;
+        }
+        @include media-tablet {
+          align-self: center;
+        }
+        img {
+          border-radius: inherit;
+        }
+      }
+      &__img-anim {
+        border: 0;
+      }
+      &__info {
+        padding: 0;
+      }
+      &__line {
+        margin-bottom: 0;
+        font-size: 16px;
+        @include media-laptop {
+          font-size: 14px;
+        }
+      }
+      &__name {
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 35px;
+        @include media-laptop {
+          margin-bottom: 10px;
+          font-size: 30px;
+        }
+        @include media-tablet {
+          font-size: 26px;
+        }
+      }
+      &__price {
+        font-size: 28px;
       }
     }
   }

@@ -21,6 +21,7 @@ import cart from '../blocks/cart/cart'
 import product from '../blocks/product/product'
 import catalogList from '../blocks/catalog-list/catalog-list'
 import catalogFilter from '../blocks/catalog-filter/catalog-filter'
+import productSlider from '../blocks/product-slider/product-slider'
 
 document.addEventListener('DOMContentLoaded', function () {
   header()
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   product()
   catalogList()
   catalogFilter()
+  productSlider()
   // uiDatepicker()
   // uiInput()
   uiRange()

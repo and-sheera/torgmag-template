@@ -105,4 +105,7 @@ blockquote {
   .ui-blue {
     color: $blue;
   }
+  .swiper-wrapper {
+    box-sizing: border-box;
+  }
 }

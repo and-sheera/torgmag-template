@@ -1,0 +1,36 @@
+.product-slider {
+  position: relative;
+  @include media-laptop {
+    padding: 0 10px;
+  }
+  @include media-tablet {
+    padding: 0;
+  }
+  &__ui-swiper-buttons {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    left: -20px;
+    z-index: 10;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    pointer-events: none;
+    @include media-laptop {
+      right: -5px;
+      left: -5px;
+    }
+    @include media-tablet {
+      display: none;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      pointer-events: all;
+    }
+  }
+  .swiper-slide {
+    transition: opacity 0.3s;
+    &:not(.swiper-slide-visible) {
+      opacity: 0;
+    }
+  }
+}

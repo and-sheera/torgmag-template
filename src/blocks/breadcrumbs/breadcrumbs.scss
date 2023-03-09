@@ -1,11 +1,15 @@
 .breadcrumbs {
   position: relative;
   z-index: 5;
+  margin-bottom: 30px;
   &__list {
     display: flex;
     align-items: center;
     gap: 6px;
     @include media-tablet {
+      margin-right: -10px;
+      margin-left: -10px;
+      padding: 0 10px;
       overflow-y: auto;
     }
   }
@@ -15,6 +19,7 @@
     gap: 6px;
     font-size: 13px;
     white-space: nowrap;
+    flex-shrink: 0;
     @include media-tablet {
       font-size: 12px;
     }

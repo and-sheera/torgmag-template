@@ -31,6 +31,8 @@ export default function product() {
         animImg.src = img.src
         animImg.style.top = `${img.getBoundingClientRect().top}px`
         animImg.style.left = `${img.getBoundingClientRect().left}px`
+        animImg.style.width = `${img.offsetWidth}px`
+        animImg.style.height = `${img.offsetHeight}px`
         document.body.append(animImg)
         setTimeout(() => {
           animImg.classList.add('translate')

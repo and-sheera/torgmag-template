@@ -10,6 +10,29 @@ mixin product(mods, type)
       allMods = allMods.trim()
     }
 
+    const props = [
+      [
+        'Вес:',
+        '0.0 кг'
+      ],
+      [
+        'Габариты:',
+        '1650х1000х500,1650х700х500'
+      ],
+      [
+        'Материал:',
+        'Металл'
+      ],
+      [
+        'Производитель:',
+        'Краснодар'
+      ],
+      [
+        'Гарантия:',
+        '0 мес.'
+      ],
+    ]
+
   form.product(class=allMods)&attributes(attributes)
     case type
       when 'cart'
@@ -18,8 +41,33 @@ mixin product(mods, type)
           a.product__name(href='#') Крючок для перфорации одинарный 100мм d-4мм, цинк арт. SH504Z-100SX
           .product__price 12 489 ₽
         +product__quantity
-        button.product__delete
+        button.product__delete(type='button')
           +svg('icon_plus')
+        block
+      when 'inner'
+        .product__img: img(src='../../images/catalog-inner-1.jpg' alt='')
+        .product__info
+          h1.product__name Стеллаж торговый пристенный с полками 1650
+          .product__line
+            .product__art Арт. L013414
+            .product__status.product__status--in-stock В наличии
+          .product__main
+            .product__price 12 489 ₽
+            .product__control
+              +product__quantity
+              button.product__button(type='button')
+                +svg('icon_cart')
+                | В корзину
+          .product__section
+            .product__section-name Описание
+            .product__descr Высота: 1650мм. Длина: 1000 и 700мм. Глубина 500мм. Полки: 1х500мм. 2х400мм. 2х320мм. Цвет стеллажа: Белый. Стеллаж просчитан с одной стойкой для удобства расчета.Для завершения линии стеллажей необходима дополнительная боковая стойка и кронштейны полок стоимостью 940р Возможно укомплектовать стеллажи крючками дополнительным навесным торговым оборудованием.
+          .product__section
+            .product__section-name Характеристики
+            .product__props
+              each item in props
+                .product__prop-line
+                  each prop in item
+                    .product__prop !{prop}
         block
       default
         .product__img: img(src='../../images/catalog-inner-1.jpg' alt='')

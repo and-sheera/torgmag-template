@@ -11,9 +11,6 @@
   @include media-tablet {
     height: auto;
   }
-  &__wrapper {
-    box-sizing: border-box;
-  }
   &__slide {
     display: flex;
     justify-content: space-between;
