@@ -1,0 +1,6 @@
+.ui-label {
+  font-size: 14px;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

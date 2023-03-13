@@ -1,0 +1,46 @@
+.feedback {
+  max-width: 550px;
+  margin: 0 auto;
+  @include media-tablet {
+    padding: 0 10px;
+  }
+  &__line {
+    &--row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+      @include media-tablet {
+        grid-template-columns: minmax(0, 1fr);
+        gap: inherit;
+      }
+    }
+  }
+  &__fields {
+    display: grid;
+    gap: 30px;
+    @include media-tablet {
+      gap: 25px;
+    }
+  }
+  &__foot {
+    margin-top: 40px;
+    @include media-tablet {
+      margin-top: 30px;
+    }
+  }
+  &__fn {
+    margin-top: 25px;
+    font-size: 14px;
+    color: $grey80;
+    @include media-tablet {
+      margin-top: 20px;
+    }
+  }
+  &__submit {
+    margin-top: 40px;
+    text-align: center;
+    @include media-tablet {
+      margin-top: 30px;
+    }
+  }
+}

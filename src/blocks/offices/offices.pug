@@ -1,0 +1,42 @@
+mixin offices(mods)
+  -
+    const baseName = 'offices'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .offices(class=allMods)&attributes(attributes)
+    -for(let i=0; i<3; i++)
+      .offices__item
+        .offices__name Офис в Железнодорожном районе
+        .offices__content
+          .offices__img: img(src='../../images/office.jpg' alt='')
+          .offices__info
+            .offices__line
+              +svg('icon_map')
+              .offices__text
+                b г. Воронеж, ул. Остужева 47
+            .offices__line
+              +svg('icon_tel')
+              .offices__text
+                p
+                  a(href='tel:8-920-220-220-5') 8-920-220-220-5
+                p
+                  a(href='tel:8-951-555-75-75') 8-951-555-75-75
+            .offices__line
+              +svg('icon_mail')
+              .offices__text
+                a(href='mailto:torgmagvrn@mail.ru') torgmagvrn@mail.ru
+            .offices__line
+              +svg('icon_clock')
+              .offices__text.offices__text--shedule
+                p Пн-Сб: c 8.00 до 17:00
+                p Вс: c 8.00 до 15:00
+          .offices__map
+            iframe(src='https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=39.298869%2C51.679526&mode=search&oid=1220111139&ol=biz&z=17.52' width='100%' height='100%' frameborder='0' allowfullscreen)
+    block

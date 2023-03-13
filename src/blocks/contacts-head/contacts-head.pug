@@ -1,0 +1,21 @@
+mixin contacts-head(mods)
+  -
+    const baseName = 'contacts-head'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .contacts-head(class=allMods)&attributes(attributes)
+    .contacts-head__item
+      .contacts-head__label Телефон главного офиса
+      a.contacts-head__link.contacts-head__link--tel(href='tel:89202202205') 8-920-220-220-5
+    .contacts-head__item
+      .contacts-head__label Почта
+      a.contacts-head__link.contacts-head__link--mail(href='mailto:') torgmagvrn@mail.ru
+    +ui-button('Скачать реквизиты', 'contacts-head, --border', 'icon_file')(href='#')
+    block

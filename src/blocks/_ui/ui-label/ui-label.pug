@@ -1,6 +1,6 @@
-mixin ui-textarea(id, mods)
+mixin ui-label(text, mods)
   -
-    const baseName = 'ui-textarea'
+    const baseName = 'ui-label'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,5 +10,5 @@ mixin ui-textarea(id, mods)
       allMods = allMods.trim()
     }
 
-  .ui-textarea(class=allMods)
-    textarea(id=id name=id)&attributes(attributes)
+  .ui-label(class=allMods)&attributes(attributes) !{text}
+    block

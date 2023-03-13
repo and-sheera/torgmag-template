@@ -102,8 +102,13 @@ blockquote {
       padding-bottom: 50px;
     }
   }
-  .ui-blue {
-    color: $blue;
+  .ui {
+    &-blue {
+      color: $blue;
+    }
+    &-text-center {
+      text-align: center;
+    }
   }
   .swiper-wrapper {
     box-sizing: border-box;

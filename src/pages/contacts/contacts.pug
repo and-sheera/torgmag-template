@@ -1,0 +1,25 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'contacts'
+    const pageTitle = 'Контакты'
+
+block content
+  main
+    +breadcrumbs('--page-head')
+      +breadcrumbs-item(pageTitle)
+    +page-head('../../images/page-head_about.jpg', pageTitle)
+    +section('--mt-90')
+      .inner
+        +contacts-head
+    +section
+      .inner
+        +section-head
+          +ui-h2('Наши офисы')
+        +offices
+    +section('--bg')
+      .inner
+        +section-head('--center')
+          +ui-h2('Обратная связь')
+        +feedback

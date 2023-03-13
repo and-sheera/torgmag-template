@@ -1,0 +1,33 @@
+mixin feedback(mods)
+  -
+    const baseName = 'feedback'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  form.feedback(class=allMods data-js-form)&attributes(attributes)
+    .feedback__fields
+      .feedback__line
+        +ui-label('Ваше имя*')
+        +ui-input('name')(required)
+      .feedback__line.feedback__line--row
+        .feedback__line
+          +ui-label('Электронная почта*')
+          +ui-input('email', '', 'email')(required)
+        .feedback__line
+          +ui-label('Контактный телефон')
+          +ui-input('tel')(data-mask='tel')
+      .feedback__line
+        +ui-label('Контактный телефон')
+        +ui-textarea()(required)
+    .feedback__foot
+      +ui-checkbox('agreement', 'Нажимая на эту кнопку, я даю свое согласие на <a href="#">обработку персональных данных</a> и соглашаюсь с <a href="#">условиями политики конфиденциальности</a>', 'feedback')(data-parsley-errors-messages-disabled required)
+      .feedback__fn * Поля обязательные для заполнения
+      .feedback__submit
+        +ui-button('Отправить сообщение', 'feedback')(type='submit')
+    block

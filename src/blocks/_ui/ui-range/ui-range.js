@@ -30,12 +30,7 @@ export default function uiRange() {
         )
       })
 
-      // const rangeValues = [
-      //   rangeBody.parentElement.querySelector('.ui-range__lower'),
-      //   rangeBody.parentElement.querySelector('.ui-range__upper')
-      // ]
       rangeBody.noUiSlider.on('update', function (values, handle) {
-        // console.log(handle)
         inputs[handle].value = values[handle]
         inputHiddenValues[handle].textContent = values[handle]
       })

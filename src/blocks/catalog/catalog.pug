@@ -41,32 +41,34 @@ mixin catalog(mods, type)
     ]
 
   .catalog(class=allMods)&attributes(attributes)
-    -for(let i=0; i<5; i++)
-      each item in data
-        .catalog__group
-          a.catalog__item(href='#')
-            .catalog__icon
-              include ../../images/catalog-1.svg
-            //- .catalog__icon: img(src=item.icon alt='')
-            .catalog__name !{item.name}
-          .catalog__inner
-            .catalog__back
-              +ui-button('Назад', '--text', 'icon_s-arrow-left')
-            -for(let i=0; i<5; i++)
-              each item in inner
-                a.catalog__inner-item(href='#')
-                  .catalog__img: img(src=item.img alt='')
-                  .catalog__inner-name !{item.name}
-    .catalog__group
-      a.catalog__item(href='#')
-        .catalog__icon
-          include ../../images/catalog-1.svg
-        .catalog__name Pos-материалы (ценникодержатели, рамки, аксессуары)
-      .catalog__inner
-        .catalog__back
-          +ui-button('Назад', '--text', 'icon_s-arrow-left')
-        each item in inner
-          a.catalog__inner-item(href='#')
-            .catalog__img: img(src=item.img alt='')
-            .catalog__inner-name !{item.name}
+    .catalog__list
+      -for(let i=0; i<5; i++)
+        each item in data
+          .catalog__group
+            a.catalog__item(href='#')
+              .catalog__icon
+                include ../../images/catalog-1.svg
+              //- .catalog__icon: img(src=item.icon alt='')
+              .catalog__name !{item.name}
+            .catalog__inner
+              .catalog__back
+                +ui-button('Назад', '--text', 'icon_s-arrow-left')
+              -for(let i=0; i<5; i++)
+                each item in inner
+                  a.catalog__inner-item(href='#')
+                    .catalog__img: img(src=item.img alt='')
+                    .catalog__inner-name !{item.name}
+      .catalog__group
+        a.catalog__item(href='#')
+          .catalog__icon
+            include ../../images/catalog-1.svg
+          .catalog__name Pos-материалы (ценникодержатели, рамки, аксессуары)
+        .catalog__inner
+          .catalog__back
+            +ui-button('Назад', '--text', 'icon_s-arrow-left')
+          each item in inner
+            a.catalog__inner-item(href='#')
+              .catalog__img: img(src=item.img alt='')
+              .catalog__inner-name !{item.name}
+    .catalog__shadow
     block

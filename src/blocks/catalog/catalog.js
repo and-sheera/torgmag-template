@@ -13,5 +13,15 @@ export default function catalog() {
         this.closest('.catalog__group').classList.remove('active')
       })
     }
+
+    const list = catalogElement.querySelector('.catalog__list')
+    const shadow = catalogElement.querySelector('.catalog__shadow')
+
+    list.addEventListener('mouseenter', function () {
+      shadow.classList.add('active')
+    })
+    list.addEventListener('mouseleave', function () {
+      shadow.classList.remove('active')
+    })
   }
 }

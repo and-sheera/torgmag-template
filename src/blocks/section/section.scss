@@ -35,6 +35,17 @@
       margin-top: -80px;
     }
   }
+  &--mt-90 {
+    position: relative;
+    z-index: 1;
+    margin-top: -90px;
+    @include media-laptop {
+      margin-top: -70px;
+    }
+    @include media-tablet {
+      margin-top: -60px;
+    }
+  }
   &--bg {
     padding: 50px 0;
     background: $blue20;
@@ -74,6 +85,10 @@
     }
     &__ui-button {
       margin-left: auto;
+    }
+    &--center {
+      justify-content: center;
+      text-align: center;
     }
   }
 }

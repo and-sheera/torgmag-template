@@ -5,33 +5,17 @@ import 'parsleyjs/dist/i18n/ru'
 
 export default function uiInput() {
   inputMask()
-  checkInputFill()
   validation()
 }
 
 function inputMask() {
-  const inputMaskItem = document.querySelector('#phone')
-  if (inputMaskItem) {
-    IMask(inputMaskItem, {
-      mask: '+{7} (000) 000-00-00',
-      lazy: false
+  for (const input of document.querySelectorAll('[data-mask=tel]')) {
+    IMask(input, {
+      mask: '+{7} (000) 000-00-00'
     })
   }
 }
 
-function checkInputFill() {
-  const uiInputs = document.querySelectorAll('.ui-input')
-  if (uiInputs) {
-    for (const element of uiInputs) {
-      const input = element.querySelector('input')
-      input.value === '' ? input.classList.remove('filled') : input.classList.add('filled')
-      input.addEventListener('input', function () {
-        input.value === '' ? input.classList.remove('filled') : input.classList.add('filled')
-      })
-    }
-  }
-}
-
 function validation() {
-  $('form').parsley()
+  $('[data-js-form]').parsley()
 }

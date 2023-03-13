@@ -1,8 +1,11 @@
 .catalog {
-  position: relative;
-  padding: 5px 0;
-  background: $blue;
-  border-radius: 10px;
+  &__list {
+    position: relative;
+    z-index: 905;
+    padding: 10px 0;
+    background: $blue;
+    border-radius: 10px;
+  }
   &__group {
     position: relative;
     &:not(:first-child) {
@@ -174,6 +177,26 @@
     margin-bottom: 5px;
     @include media-tablet {
       display: block;
+    }
+  }
+  &__shadow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+    background: rgb(0 0 0 / 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      @include media-tablet {
+        opacity: 0;
+        visibility: hidden;
+      }
     }
   }
 }

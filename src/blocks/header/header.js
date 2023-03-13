@@ -42,6 +42,7 @@ function fixedHeader() {
       if (window.scrollY > headerHeight) {
         header.style.height = `${headerHeight}px`
         header.classList.add('header--fixed')
+        headerDimensions()
         timeoutID = setTimeout(() => {
           header.classList.add('header--fixed-transform')
         }, 200)
@@ -102,4 +103,7 @@ function search() {
 function headerDimensions() {
   const headerHeight = document.querySelector('.header').offsetHeight
   document.documentElement.style.setProperty('--header-height', `${headerHeight}px`)
+
+  const headerBotHeight = document.querySelector('.header__bot').offsetHeight
+  document.documentElement.style.setProperty('--header-bot-height', `${headerBotHeight}px`)
 }

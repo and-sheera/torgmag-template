@@ -2,6 +2,7 @@
   position: relative;
   z-index: 1000;
   flex-shrink: 0;
+  background: #fff;
   @include media-tablet {
     position: fixed;
     top: 0;
@@ -695,18 +696,11 @@
     position: absolute;
     top: calc(100% + 15px);
     max-width: 300px;
-    padding: 10px 0;
-    background: #fff;
-    box-shadow: 0 3px 36px rgb(0 0 0 / 0.07);
     animation: fade-in 0.3s;
     @include media-tablet {
       position: static;
       width: auto;
       max-width: none;
-      padding: 10px 20px;
-      background: transparent;
-      border-radius: 0;
-      box-shadow: none;
     }
     &::before {
       content: '';
@@ -719,6 +713,17 @@
       }
     }
     .catalog {
+      &__list {
+        padding: 10px 0;
+        background: #fff;
+        box-shadow: 0 3px 36px rgb(0 0 0 / 0.07);
+        @include media-tablet {
+          padding: 10px 20px;
+          background: transparent;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
       &__group {
         position: static;
         &::before {
@@ -875,6 +880,9 @@
       }
       &__back {
         grid-column: 1/-1;
+      }
+      &__shadow {
+        top: var(--header-bot-height, 95px);
       }
     }
   }
