@@ -10,33 +10,35 @@
     gap: 15px;
   }
   &__item {
+    --img-size: 200px;
+
     position: relative;
-    display: block;
-    height: 290px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #ebebeb;
     border-radius: 10px;
     overflow: hidden;
-    @include media-laptop {
-      height: 240px;
-    }
     @include media-tablet {
-      height: 180px;
+      --img-size: 180px;
     }
     &::before,
     &::after {
       content: '';
       position: absolute;
-      top: 0;
+      top: calc(var(--img-size) + 10px);
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: 1;
+      z-index: 0;
       transition: 0.3s;
+      border-radius: inherit;
     }
     &::before {
-      background: linear-gradient(0deg, rgb(16 24 32 / 0.56) 0%, rgb(255 255 255 / 0) 145.53%);
+      background: linear-gradient(180deg, rgb(239 242 244 / 0) 0%, #eff2f4 100%);
     }
     &::after {
-      background: linear-gradient(360deg, rgb(29 63 101 / 0.83) 0.64%, rgb(255 255 255 / 0) 144.23%);
+      background: linear-gradient(180deg, rgb(239 242 244 / 0) 20%, rgb(116 162 192 / 0.7) 100%);
       opacity: 0;
     }
     @include media-hover {
@@ -44,24 +46,21 @@
         opacity: 0;
       }
       &::after {
-        opacity: 1;
+        opacity: 0.8;
       }
-      .popular__img img {
-        transform: scale(1.1);
+      .popular__img {
+        transform: scale(1.07);
       }
     }
   }
   &__name {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    width: 100%;
+    position: relative;
+    z-index: 1;
     padding: 20px 65px;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
-    color: #fff;
+    color: $blue;
     @include media-laptop {
       font-size: 18px;
     }
@@ -72,14 +71,15 @@
   }
   &__img {
     position: relative;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
+    z-index: 1;
+    width: var(--img-size);
+    height: var(--img-size);
+    margin: 15px auto;
+    transition: 0.3s;
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: 0.3s;
+      object-fit: contain;
     }
   }
 }

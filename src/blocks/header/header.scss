@@ -807,8 +807,8 @@
         height: 100%;
         max-width: unset;
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px 10px;
-        padding: 20px 15px;
+        gap: 15px;
+        padding: 20px;
         border-radius: 10px;
         overflow-x: visible;
         overflow-y: auto;
@@ -824,8 +824,8 @@
           width: 100%;
           height: auto;
           max-width: none;
-          grid-template-columns: repeat(2, 1fr);
-          background: $blue20;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
           border-radius: 0;
           overflow-y: auto;
         }
@@ -840,11 +840,16 @@
           content: none;
         }
         &-item {
-          height: auto;
-          overflow: unset;
+          --img-size: 170px;
+          @include media-tablet {
+            --img-size: 120px;
+          }
           &::before,
           &::after {
-            content: none;
+            top: calc(var(--img-size) + 15px);
+            @include media-tablet {
+              top: calc(var(--img-size) + 10px);
+            }
           }
           &:hover {
             .catalog__img img {
@@ -854,19 +859,19 @@
         }
         &-name {
           position: static;
-          padding: 0;
-          color: inherit;
+          padding: 15px;
           font-size: 14px;
           @include media-tablet {
-            font-size: 13px;
+            padding: 10px;
           }
         }
       }
       &__img {
-        width: 100px;
-        height: 120px;
-        margin: 0 auto 10px;
+        margin: 15px auto 0;
         flex-shrink: 0;
+        @include media-tablet {
+          margin-top: 10px;
+        }
       }
       &__back {
         grid-column: 1/-1;
