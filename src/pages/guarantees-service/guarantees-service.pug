@@ -1,0 +1,26 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'guarantees-service'
+    const pageTitle = 'Гарантии и сервис'
+
+    const advantagesData = [
+      {
+        icon: '../../images/about-reputation.svg',
+        descr: 'Наша компания оказывает полный спектр сервисных услуг по установке и ремонту торгового оборудования. Вся наша продукция имеет сертификаты, подтверждающие качество и гарантийные талоны.'
+      },
+    ]
+
+block content
+  main
+    +breadcrumbs('--page-head')
+      +breadcrumbs-item(pageTitle)
+    +page-head('../../images/page-head_catalog.jpg', pageTitle)
+    +section('--mt-70')
+      .inner
+        +advantages(advantagesData)
+    +section
+      .inner
+        +text-content
+          p Наша компания оказывает полный спектр сервисных услуг по установке и ремонту торгового оборудования.  Вся наша продукция имеет сертификаты, подтверждающие качество и гарантийные талоны. Сотрудничая с нами, вы всегда можете рассчитывать на качественное оборудование и его гарантийное и постгарантийное обслуживание.

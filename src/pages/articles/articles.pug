@@ -1,0 +1,18 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'articles'
+    const pageTitle = 'Статьи'
+
+block content
+  main
+    +breadcrumbs('--page-head')
+      +breadcrumbs-item(pageTitle)
+    +page-head('../../images/page-head_catalog.jpg', pageTitle)
+    +section('--mt-70')
+      .inner
+        +articles-filter
+    +section
+      .inner
+        +articles

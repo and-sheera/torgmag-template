@@ -1,0 +1,26 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'portfolio'
+    const pageTitle = 'Портфолио'
+
+block content
+  main
+    +breadcrumbs('--page-head')
+      +breadcrumbs-item(pageTitle)
+    +page-head('../../images/page-head_catalog.jpg', pageTitle)
+      +page-head__subtitle('Более')
+        =' '
+        span.page-head__subtitle-xl 14
+        |  выполненных проектов
+    +section
+      .inner
+        +our-works('--grid')
+    +section('--bg, --ov-h')
+      .inner
+        +section-head
+          +ui-h2('Полезные статьи', '--bold')
+          +ui-button('Смотреть все', '--text', '', 'icon_s-arrow-right')
+          +ui-swiper-buttons('section-head')
+        +articles-slider

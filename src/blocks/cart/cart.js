@@ -1,13 +1,15 @@
 export default function cart() {
-  for (const cartElement of document.querySelectorAll('.cart')) {
-    cartElement.querySelector('.cart__button').addEventListener('click', function () {
-      cartElement.querySelector('.cart__main').classList.add('active')
+  document.addEventListener('click', (event) => {
+    const cartButton = event.target.closest('.cart__button')
+    if (cartButton) {
+      cartButton.closest('.cart').querySelector('.cart__main').classList.add('active')
       document.documentElement.style.overflow = 'hidden'
-    })
+    }
 
-    cartElement.querySelector('.cart__close').addEventListener('click', function () {
+    const cartClose = event.target.closest('.cart__close')
+    if (cartClose) {
       document.documentElement.style.overflow = ''
-      cartElement.querySelector('.cart__main').classList.remove('active')
-    })
-  }
+      cartClose.closest('.cart').querySelector('.cart__main').classList.remove('active')
+    }
+  })
 }

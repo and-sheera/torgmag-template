@@ -1,6 +1,6 @@
-mixin articles(mods)
+mixin text-content(mods)
   -
-    const baseName = 'articles'
+    const baseName = 'text-content'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,9 +10,5 @@ mixin articles(mods)
       allMods = allMods.trim()
     }
 
-  .articles(class=allMods)&attributes(attributes)
-    .articles__list
-      -for(let i=0; i<20; i++)
-        +article
-    +pagination
+  .text-content(class=allMods)&attributes(attributes)
     block

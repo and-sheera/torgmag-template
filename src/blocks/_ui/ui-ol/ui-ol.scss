@@ -1,7 +1,7 @@
 .ui-ol {
   counter-reset: itemOl;
   list-style-type: none;
-  li {
+  > li {
     position: relative;
     padding-left: 40px;
     counter-increment: itemOl;
@@ -11,31 +11,20 @@
     &::before {
       content: counter(itemOl);
       position: absolute;
-      top: 10px;
+      top: 0;
       left: 0;
-      font-size: 16px;
-      color: teal;
-      @include media-laptop {
-        top: 6px;
-      }
-      @include media-tablet {
-        top: 4px;
-        font-size: 14px;
-      }
-    }
-    &:nth-child(-n+9) {
-      &::before {
-        content: '0' counter(itemOl);
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      color: #fff;
+      background: $red90;
+      border-radius: 50%;
     }
     &:not(:last-child) {
-      margin-bottom: 30px;
-      @include media-laptop {
-        margin-bottom: 25px;
-      }
-      @include media-tablet {
-        margin-bottom: 20px;
-      }
+      margin-bottom: 1em;
     }
   }
 }

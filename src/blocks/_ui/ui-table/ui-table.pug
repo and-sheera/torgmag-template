@@ -1,6 +1,6 @@
-mixin articles(mods)
+mixin ui-table(mods)
   -
-    const baseName = 'articles'
+    const baseName = 'ui-table'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,9 +10,6 @@ mixin articles(mods)
       allMods = allMods.trim()
     }
 
-  .articles(class=allMods)&attributes(attributes)
-    .articles__list
-      -for(let i=0; i<20; i++)
-        +article
-    +pagination
-    block
+  .ui-table(class=allMods)
+    table&attributes(attributes)
+      block

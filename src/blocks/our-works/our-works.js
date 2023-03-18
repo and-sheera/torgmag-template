@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle'
 
 export default function ourWorks() {
-  const wrapper = document.querySelector('.our-works')
+  const wrapper = document.querySelector('.our-works:not(.our-works--grid)')
   if (wrapper) {
     const worksSlider = new Swiper(wrapper, {
       slidesPerView: 1,

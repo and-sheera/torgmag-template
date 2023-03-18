@@ -10,14 +10,27 @@ mixin our-works(mods)
       allMods = allMods.trim()
     }
 
-  .our-works(class=allMods)&attributes(attributes)
-    .our-works__wrapper.swiper-wrapper
-      -for(let i=0; i<5; i++)
-        .our-works__item.swiper-slide
-          .our-works__img: img(src='../../images/catalog-inner-2.jpg' alt='')
-          .our-works__info
-            h5.our-works__title Оборудование продуктового магазина
-            .our-works__descr В городе Липецк
-            +ui-button('Смотреть', 'our-works, --border')
-    +ui-swiper-bullets('--mt')
-    block
+  if pageName === 'portfolio'
+    .our-works(class=allMods)&attributes(attributes)
+      .our-works__wrapper
+        -for(let i=0; i<15; i++)
+          .our-works__item
+            .our-works__img: img(src='../../images/catalog-inner-2.jpg' alt='')
+            .our-works__info
+              h5.our-works__title Оборудование продуктового магазина
+              .our-works__descr В городе Липецк
+              +ui-button('Смотреть', 'our-works, --border')
+      +pagination
+      block
+  else
+    .our-works(class=allMods)&attributes(attributes)
+      .our-works__wrapper.swiper-wrapper
+        -for(let i=0; i<5; i++)
+          .our-works__item.swiper-slide
+            .our-works__img: img(src='../../images/catalog-inner-2.jpg' alt='')
+            .our-works__info
+              h5.our-works__title Оборудование продуктового магазина
+              .our-works__descr В городе Липецк
+              +ui-button('Смотреть', 'our-works, --border')
+      +ui-swiper-bullets('--mt')
+      block

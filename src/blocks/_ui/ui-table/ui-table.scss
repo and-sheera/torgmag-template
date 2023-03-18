@@ -1,0 +1,60 @@
+.ui-table {
+  &::-webkit-scrollbar {
+    height: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    margin: 0 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+  }
+  @include media-laptop {
+    margin: 0 -10px;
+    padding: 0 10px 10px;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    background: #fff;
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-size: 18px;
+    line-height: 1.4;
+    @include media-laptop {
+      font-size: 16px;
+    }
+    @include media-tablet {
+      font-size: 14px;
+    }
+    thead {
+      tr {
+        background: $blue20;
+        font-weight: 700;
+      }
+    }
+    th {
+      &:first-child {
+        text-align: left;
+      }
+      &:not(:first-child) {
+        vertical-align: top;
+      }
+    }
+    td {
+      &:not(:first-child) {
+        text-align: center;
+      }
+    }
+    td,
+    th {
+      padding: 20px;
+      border: 1px solid #ebebeb;
+      @include media-laptop {
+        padding: 15px;
+      }
+      @include media-tablet {
+        padding: 10px;
+      }
+    }
+  }
+}

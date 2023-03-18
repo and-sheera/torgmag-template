@@ -1,0 +1,20 @@
+mixin articles-filter(mods)
+  -
+    const baseName = 'articles-filter'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .articles-filter(class=allMods)&attributes(attributes)
+    .articles-filter__timeline
+      .articles-filter__year.active 2000
+      -for(let i=2001; i<2023; i++)
+        a.articles-filter__year(href='#') !{i}
+    .articles-filter__count Статей:
+      span.articles-filter__count-num 40
+    block
