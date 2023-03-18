@@ -525,7 +525,7 @@
           display: block;
           position: sticky;
           top: 10px;
-          z-index: 5;
+          z-index: 1000;
           margin-right: 0;
         }
       }
@@ -896,7 +896,7 @@
       display: block;
       position: sticky;
       top: 18px;
-      z-index: 5;
+      z-index: 1000;
     }
     span {
       display: block;
@@ -914,7 +914,7 @@
     @include media-tablet {
       position: sticky;
       top: 10px;
-      z-index: 5;
+      z-index: 1000;
       justify-self: end;
     }
     .cart__button {
@@ -994,7 +994,7 @@
           position: fixed;
           top: 0;
           left: 0;
-          z-index: 1;
+          z-index: 1000;
           width: 100%;
           height: var(--header-height, 59px);
           background: #fff;
