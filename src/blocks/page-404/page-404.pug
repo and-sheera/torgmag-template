@@ -1,0 +1,19 @@
+mixin page-404(mods)
+  -
+    const baseName = 'page-404'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .page-404(class=allMods)&attributes(attributes)
+    .inner
+      .page-404__wrapp
+        h3.page-404__title Страница, которую вы ищете, не существует
+        .page-404__descr Запрашиваемая вами страница изменила свой адрес, была удалена или вы ввели неверный URL-адрес.
+        +ui-button('На главную', 'page-404')(href='/')
+      block
