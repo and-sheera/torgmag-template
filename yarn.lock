@@ -1046,11 +1046,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fancyapps/ui@^4.0.31":
-  version "4.0.31"
-  resolved "https://registry.yarnpkg.com/@fancyapps/ui/-/ui-4.0.31.tgz#cf187b0ffe41ec1f44fd2ba2c2237f5cf7914619"
-  integrity sha512-D7+PMIloxSOFJyY+lXcNlVDhmssOmDT6PT5fqQUIiws2hT7PH29r0EKZxERmACSQpm6qrFkP7rSguzXWvRJduQ==
-
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"
@@ -1142,11 +1137,6 @@
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@orchidjs/unicode-variants/-/unicode-variants-1.0.4.tgz#6d2f812e3b19545bba2d81caffff1204de9a6a58"
   integrity sha512-NvVBRnZNE+dugiXERFsET1JlKZfM5lJDEpSMilKW4bToYJ7pxf0Zne78xyXB2ny2c2aHfJ6WLnz1AaTNHAmQeQ==
-
-"@popperjs/core@^2.9.0":
-  version "2.11.6"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
-  integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
 
 "@rollup/pluginutils@^4.2.1":
   version "4.2.1"
@@ -3603,11 +3593,6 @@ flat-cache@^3.0.4:
   dependencies:
     flatted "^3.1.0"
     rimraf "^3.0.2"
-
-flatpickr@^4.6.13:
-  version "4.6.13"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.13.tgz#8a029548187fd6e0d670908471e43abe9ad18d94"
-  integrity sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw==
 
 flatted@^3.1.0:
   version "3.2.7"
@@ -6845,11 +6830,6 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-slide-element@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/slide-element/-/slide-element-2.3.1.tgz#92934516ef177ad59cae5ef4d1e991fcd85a4c09"
-  integrity sha512-DBDX3fGmrL4lED9PGHv1254sHiQp5KsdeOJ+ohAdU1qOaolAHxYT9Wa5TjW1cw4Oh05Rq2fYpeIp1tFdQBg2Ug==
-
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -7406,13 +7386,6 @@ timed-out@^4.0.0, timed-out@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
   integrity sha512-G7r3AhovYtr5YKOWQkta8RKAPb+J9IsO4uVmzjl8AZwfhs8UcUwTiD6gcJYSgOtzyjvQKrKYn41syHbUWMkafA==
-
-tippy.js@^6.3.7:
-  version "6.3.7"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.3.7.tgz#8ccfb651d642010ed9a32ff29b0e9e19c5b8c61c"
-  integrity sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==
-  dependencies:
-    "@popperjs/core" "^2.9.0"
 
 to-absolute-glob@^2.0.0:
   version "2.0.2"

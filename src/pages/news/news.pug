@@ -1,0 +1,19 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'news'
+    const pageTitle = 'Новости'
+
+block content
+  main
+    +breadcrumbs('--page-head')
+      +breadcrumbs-item(pageTitle)
+    +page-head('../../images/page-head_catalog.jpg', pageTitle)
+    +section('--mt-70')
+      .inner
+        +articles-filter('Новостей:')
+    +section
+      .inner
+        +news
+        +pagination

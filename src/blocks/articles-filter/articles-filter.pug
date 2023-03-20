@@ -1,4 +1,4 @@
-mixin articles-filter(mods)
+mixin articles-filter(text = 'Статей', mods)
   -
     const baseName = 'articles-filter'
     let allMods = ''
@@ -15,6 +15,6 @@ mixin articles-filter(mods)
       .articles-filter__year.active 2000
       -for(let i=2001; i<2023; i++)
         a.articles-filter__year(href='#') !{i}
-    .articles-filter__count Статей:
+    .articles-filter__count !{text}
       span.articles-filter__count-num 40
     block

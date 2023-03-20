@@ -119,46 +119,4 @@
       }
     }
   }
-  &-fraction {
-    .swiper-pagination {
-      position: relative;
-      bottom: auto;
-      display: flex;
-      align-items: center;
-      &-current {
-        font: 22px/1.6 $font;
-        color: red;
-        @include media-tablet {
-          font-size: 18px;
-        }
-      }
-      &-progress {
-        position: relative;
-        width: 18px;
-        height: 1px;
-        margin: 0 7px;
-        background-color: #d1c9be;
-        &-line {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 0;
-          height: 100%;
-          background-color: red;
-          transition-timing-function: linear;
-          &--active {
-            width: 100%;
-          }
-        }
-      }
-      &-total {
-        margin-top: 5px;
-        font: 300 16px/1.5 $font;
-        @include media-tablet {
-          margin-top: 3px;
-          font-size: 15px;
-        }
-      }
-    }
-  }
 }

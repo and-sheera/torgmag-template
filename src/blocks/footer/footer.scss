@@ -17,7 +17,7 @@
   }
   &__menu {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     gap: 10px 30px;
     align-content: start;
     margin-right: auto;
@@ -27,7 +27,7 @@
     }
     @include media-tablet {
       grid-template-columns: repeat(2, auto);
-      gap: 10px 15px;
+      gap: 10px 20px;
       grid-column: unset;
     }
   }

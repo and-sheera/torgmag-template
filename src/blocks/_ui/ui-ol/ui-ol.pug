@@ -12,7 +12,5 @@ mixin ui-ol(listItems, mods)
 
   ol.ui-ol(class=allMods)&attributes(attributes)
     each item in listItems
-      if item.p1
-        li
-          +ui-p1(item.p1)
+      li !{item}
     block

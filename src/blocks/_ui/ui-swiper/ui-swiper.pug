@@ -48,19 +48,3 @@ mixin ui-swiper-bullets(mods)
   .ui-swiper-bullets(class=allMods)&attributes(attributes)
     .swiper-pagination
       block
-
-mixin ui-swiper-fraction(mods)
-  -
-    const baseName = 'ui-swiper-fraction'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
-
-  .ui-swiper-fraction(class=allMods)&attributes(attributes)
-    .swiper-pagination
-      block

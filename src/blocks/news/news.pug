@@ -10,8 +10,10 @@ mixin news(mods)
       allMods = allMods.trim()
     }
 
+    const length = pageName === 'news' ? 10 : 3
+
   .news(class=allMods)&attributes(attributes)
-    -for(let i=0; i<3; i++)
+    -for(let i=0; i<length; i++)
       .news__item
         .news__img: img(src='../../images/news.jpg' alt='')
         .news__text

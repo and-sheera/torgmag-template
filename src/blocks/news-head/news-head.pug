@@ -1,0 +1,24 @@
+mixin news-head(mods)
+  -
+    const baseName = 'news-head'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .news-head(class=allMods)&attributes(attributes)
+    +ui-h1('Мы пополнили ассортимент торговых стеллажей!', 'news-head')
+    .news-head__date 10.11.2022
+    .news-head__cover: img(src='../../images/news-inner.jpg' alt='')
+    .news-head__share
+      .news-head__share-label Поделиться
+      .news-head__socials
+        a.news-head__social(href='#')
+          +svg('icon_ok')
+        a.news-head__social(href='#')
+          +svg('icon_vk')
+    block
