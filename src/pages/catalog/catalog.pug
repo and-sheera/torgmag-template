@@ -8,7 +8,6 @@ block variables
 block content
   main
     +breadcrumbs('--page-head')
-      //- +breadcrumbs-item('Main', '/')
       +breadcrumbs-item('Каталог')
     +page-head('../../images/page-head_catalog.jpg', 'Каталог товаров')
       +page-head__subtitle('Более')
@@ -18,7 +17,10 @@ block content
       +page-head__descr('Мы осуществляем проектирование, поставку и монтаж стеллажного и торгового оборудования в сотрудничестве с Опытным заводом «МИКРОН», одним из крупнейших российских производителей стеллажного и торгового оборудования.')
     +section
       .inner
-        +catalog-list
+        +main-aside('--xl-gap')
+          +catalog('main-aside')
+          .main-aside__content
+            +catalog-list
     +section
       .inner
         +special-offers

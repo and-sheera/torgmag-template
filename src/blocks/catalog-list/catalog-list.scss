@@ -1,10 +1,9 @@
 .catalog-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px 60px;
+  gap: 40px;
   @include media-laptop {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px 50px;
   }
   @include media-tablet {
     grid-template-columns: 1fr;
@@ -69,11 +68,8 @@
     }
   }
   &__name {
-    font-size: 17px;
+    font-size: 16px;
     color: $blue;
-    @include media-laptop {
-      font-size: 16px;
-    }
     @include media-tablet {
       font-size: 15px;
     }
