@@ -1,0 +1,33 @@
+mixin catalog-control(mods)
+  -
+    const baseName = 'catalog-control'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  form.catalog-control(class=allMods)&attributes(attributes)
+    .catalog-control__item
+      .catalog-control__label Сортировать по:
+      +ui-select('')
+        option(value='default') умолчанию
+        option(value='up') цене вверх
+        option(value='down') цене вниз
+    .catalog-control__item
+      .catalog-control__label Отображать:
+      +ui-select('')
+        option(value='60') по 60 товаров
+        option(value='90') по 90 товаров
+        option(value='120') по 120 товаров
+    .catalog-control__view
+      button.catalog-control__view-btn.active(type='button' data-view='grid')
+        +svg('icon_cells')
+      button.catalog-control__view-btn(type='button' data-view='rows')
+        +svg('icon_rows')
+      button.catalog-control__view-btn(type='button' data-view='lines')
+        +svg('icon_lines')
+    block

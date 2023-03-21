@@ -14,28 +14,6 @@
       display: none;
     }
   }
-  &__catalog-filter {
-    grid-column: 1/2;
-    @include media-custom(1200px) {
-      grid-column: unset;
-    }
-  }
-  &__content {
-    grid-column: 2/3;
-    grid-row: 1/-1;
-    @include media-custom(1200px) {
-      grid-column: unset;
-      grid-row: unset;
-    }
-  }
-  &--catalog {
-    grid-template-rows: auto 1fr;
-    @include media-custom(1200px) {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 50px;
-    }
-  }
   &--xl-gap {
     gap: 50px;
   }

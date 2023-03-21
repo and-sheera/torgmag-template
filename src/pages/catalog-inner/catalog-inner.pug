@@ -10,26 +10,28 @@ block content
     +breadcrumbs('--page-head')
       +breadcrumbs-item('Стеллажи торговые и складские', '#')
       +breadcrumbs-item('Торговые стеллажи')
-    +page-head('../../images/page-head_catalog.jpg', 'Стеллажи торговые и&nbsp;складские')
+    +page-head('../../images/page-head_catalog.jpg', 'Стеллажи торговые и&nbsp;складские', '--size-s')
     +section
       .inner
-        +main-aside('--catalog')
-          +catalog-filter('main-aside')
-          +catalog('main-aside')
+        +main-aside('--xl-gap')
           .main-aside__content
             +section('--mt0')
-              .inner
-                +catalog-tags
+              +catalog-filter('main-aside')
+            +section('--mt25')
+              +catalog('main-aside')
+          .main-aside__content
+            +section('--mt0')
+              +catalog-control
+            +section('--mt40')
+              +catalog-tags
+            +section('--mt40')
+              +section-head
+                +ui-h2('Торговые стеллажи').ui-blue
+              +catalog-inner
             +section
-              .inner
-                +section-head
-                  +ui-h2('Торговые стеллажи').ui-blue
-                +catalog-inner
-            +section
-              .inner
-                +section-head
-                  +ui-h2('Cтеллажи архивные СТФЛ (100 кг на полку)').ui-blue
-                +catalog-inner
+              +section-head
+                +ui-h2('Cтеллажи архивные СТФЛ (100 кг на полку)').ui-blue
+              +catalog-inner
     +section
       .inner
         +special-offers

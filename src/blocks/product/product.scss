@@ -6,7 +6,6 @@
   background: #fff;
   border: 1px solid #ebebeb;
   border-radius: 10px;
-  transition: 0.3s;
   @include media-tablet {
     padding: 20px 15px;
   }
@@ -77,6 +76,7 @@
     display: block;
     margin-bottom: 25px;
     font-size: 18px;
+    transition-property: color;
     @include media-laptop {
       font-size: 17px;
     }
@@ -116,7 +116,7 @@
     color: #fff;
     font-size: 14px;
     text-transform: uppercase;
-    transition: 0.3s;
+    transition: color 0.3s;
     cursor: pointer;
     @include media-hover {
       background: #fff;
@@ -140,7 +140,7 @@
       border: 0;
       flex-shrink: 0;
       color: #bdbdbd;
-      transition: 0.3s;
+      transition: color 0.3s;
       cursor: pointer;
       @include media-hover {
         color: $blue;
@@ -172,7 +172,7 @@
     background: $blue20;
     border: 0;
     border-radius: 4px;
-    transition: 0.3s;
+    transition: color 0.3s;
     cursor: pointer;
     @include media-laptop {
       left: calc(100% + 65px);

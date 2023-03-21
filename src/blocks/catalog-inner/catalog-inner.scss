@@ -21,4 +21,92 @@
       margin-top: 25px;
     }
   }
+  &--rows {
+    .catalog-inner__grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+      .product {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 0 30px;
+        @include media-tablet {
+          grid-template-rows: auto 1fr auto auto;
+          padding: 15px;
+          gap: 0 15px;
+        }
+        &__name {
+          @include media-tablet {
+            margin-bottom: 0;
+          }
+        }
+        &__img {
+          width: 155px;
+          height: 205px;
+          grid-row: 1/-1;
+          margin-bottom: 0;
+          @include media-tablet {
+            width: 93px;
+            height: 124px;
+            grid-row: 1/3;
+          }
+        }
+        &__line {
+          gap: 10px;
+          @include media-tablet {
+            margin-bottom: 5px;
+          }
+        }
+        &__bottom {
+          @include media-tablet {
+            grid-column: 1/-1;
+            grid-row: 3/4;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+  &--lines {
+    .catalog-inner__grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 15px;
+      .product {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto 1fr;
+        gap: 0 40px;
+        padding: 20px 15px;
+        @include media-tablet {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        &__img {
+          display: none;
+        }
+        &__name {
+          margin-bottom: 0;
+          @include media-tablet {
+            margin-bottom: 15px;
+          }
+        }
+        &__line {
+          justify-content: flex-start;
+          margin-bottom: 10px;
+          @include media-tablet {
+            justify-content: space-between;
+          }
+        }
+        &__bottom {
+          margin-top: 0;
+          grid-column: 2/3;
+          grid-row: 1/-1;
+          gap: 20px;
+          @include media-tablet {
+            grid-column: unset;
+            grid-row: unset;
+          }
+        }
+      }
+    }
+  }
 }

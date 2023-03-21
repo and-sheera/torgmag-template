@@ -6,11 +6,6 @@ export default function catalogFilter() {
       if (uiRange) {
         uiRange.querySelector('.ui-range__body').noUiSlider.set(uiRange.dataset.start.split(','))
       }
-
-      const uiSelect = catalogFilterElement.querySelector('.ui-select select')
-      if (uiSelect) {
-        uiSelect.tomselect.setValue('default')
-      }
     })
   }
 }

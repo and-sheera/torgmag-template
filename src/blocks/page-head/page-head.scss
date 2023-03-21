@@ -22,13 +22,20 @@
     @include media-laptop {
       min-height: 350px;
     }
+    @include media-tablet {
+      padding: 70px 0 60px;
+    }
   }
   &__ui-h1 {
     max-width: 550px;
-    margin-bottom: 20px;
     @include media-tablet {
       max-width: 320px;
-      margin-bottom: 15px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 20px;
+      @include media-tablet {
+        margin-bottom: 15px;
+      }
     }
   }
   &__subtitle {
@@ -72,6 +79,13 @@
       margin-bottom: 10px;
       @include media-tablet {
         margin-bottom: 5px;
+      }
+    }
+  }
+  &--size-s {
+    .page-head {
+      &__content {
+        min-height: 200px;
       }
     }
   }
