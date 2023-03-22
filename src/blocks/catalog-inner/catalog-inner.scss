@@ -58,7 +58,13 @@
           }
         }
         &__bottom {
+          @include media-laptop {
+            display: flex;
+            gap: 25px;
+          }
           @include media-tablet {
+            display: grid;
+            gap: 10px;
             grid-column: 1/-1;
             grid-row: 3/4;
             margin-top: 10px;
@@ -79,6 +85,14 @@
         padding: 20px 15px;
         @include media-tablet {
           grid-template-columns: minmax(0, 1fr);
+        }
+        &__price {
+          @include media-laptop {
+            text-align: right;
+          }
+          @include media-tablet {
+            text-align: left;
+          }
         }
         &__img {
           display: none;
@@ -104,6 +118,7 @@
           @include media-tablet {
             grid-column: unset;
             grid-row: unset;
+            gap: 10px;
           }
         }
       }

@@ -16,12 +16,9 @@
   &__content {
     position: relative;
     z-index: 1;
-    min-height: 370px;
+    min-height: 235px;
     padding: 70px 0;
     color: #fff;
-    @include media-laptop {
-      min-height: 350px;
-    }
     @include media-tablet {
       padding: 70px 0 60px;
     }
@@ -79,13 +76,6 @@
       margin-bottom: 10px;
       @include media-tablet {
         margin-bottom: 5px;
-      }
-    }
-  }
-  &--size-s {
-    .page-head {
-      &__content {
-        min-height: 200px;
       }
     }
   }

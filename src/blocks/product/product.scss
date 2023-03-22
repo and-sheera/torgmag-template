@@ -6,6 +6,8 @@
   background: #fff;
   border: 1px solid #ebebeb;
   border-radius: 10px;
+  transition: opacity 0.3s;
+  animation: fade-in 0.4s;
   @include media-tablet {
     padding: 20px 15px;
   }
@@ -87,10 +89,11 @@
   &__bottom {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
     margin-top: auto;
-    @include media-tablet {
-      gap: 20px;
+    @include media-laptop {
+      display: grid;
+      gap: 15px;
     }
   }
   &__price {
@@ -98,6 +101,7 @@
     font-size: 20px;
     color: $blue;
     white-space: nowrap;
+    flex-shrink: 0;
     @include media-laptop {
       font-size: 19px;
     }
@@ -116,8 +120,9 @@
     color: #fff;
     font-size: 14px;
     text-transform: uppercase;
-    transition: color 0.3s;
+    transition: 0.3s;
     cursor: pointer;
+    flex-shrink: 0;
     @include media-hover {
       background: #fff;
       color: $red;
@@ -127,11 +132,37 @@
       height: 17px;
     }
   }
+  &__favorite {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    color: #bdbdbd;
+    transition: 0.3s;
+    cursor: pointer;
+    flex-shrink: 0;
+    @include media-hover {
+      border-color: $red;
+    }
+    .svg {
+      width: 19px;
+      height: 19px;
+      margin: auto;
+    }
+    &.active {
+      color: $red;
+      border-color: $red;
+    }
+  }
   &__quantity {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-left: auto;
+    flex-shrink: 0;
     &-btn {
       width: 22px;
       height: 22px;
@@ -225,6 +256,7 @@
     display: flex;
     align-items: center;
     gap: 25px;
+    flex-grow: 1;
     @include media-laptop {
       gap: 20px;
     }
@@ -260,24 +292,21 @@
     }
   }
   &--inner {
-    flex-direction: row;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 30px;
     padding: 0;
     background: transparent;
     border: 0;
     border-radius: 0;
-    @include media-laptop {
-      gap: 30px;
-    }
     @include media-tablet {
-      flex-direction: column;
-      gap: 20px;
+      grid-template-columns: minmax(0, 1fr);
     }
     .product {
       &__img,
       &__img-anim {
-        width: 450px;
-        height: 600px;
+        width: 360px;
+        height: 475px;
         margin: 0;
         border: 1px solid #ebebeb;
         border-radius: 10px;
@@ -286,7 +315,7 @@
           height: 370px;
         }
         @include media-tablet {
-          align-self: center;
+          margin: 0 auto;
         }
         img {
           border-radius: inherit;
@@ -297,18 +326,29 @@
       }
       &__info {
         padding: 0;
+        .product__details {
+          @include media-tablet {
+            margin-top: 30px;
+            order: 1;
+          }
+          &:not(:last-child) {
+            @include media-tablet {
+              margin-bottom: 0;
+            }
+          }
+        }
       }
       &__line {
-        margin-bottom: 0;
-        font-size: 16px;
-        @include media-laptop {
-          font-size: 14px;
+        margin-bottom: 5px;
+        @include media-tablet {
+          width: 100%;
+          justify-content: space-between;
         }
       }
       &__name {
         margin-bottom: 15px;
         font-weight: 700;
-        font-size: 35px;
+        font-size: 33px;
         @include media-laptop {
           margin-bottom: 10px;
           font-size: 30px;
@@ -317,8 +357,19 @@
           font-size: 26px;
         }
       }
+      &__main {
+        gap: 25px;
+        margin-top: auto;
+        justify-content: space-between;
+      }
       &__price {
         font-size: 28px;
+      }
+      &__details {
+        grid-column: 1/-1;
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
       }
     }
   }

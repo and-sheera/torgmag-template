@@ -44,6 +44,11 @@ export default function product() {
         }, 300)
       }
     }
+
+    const favButton = event.target.closest('.product__favorite')
+    if (favButton) {
+      favButton.classList.toggle('active')
+    }
   })
 
   document.addEventListener('change', (event) => {

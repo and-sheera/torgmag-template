@@ -17,6 +17,7 @@ import catalogList from '../blocks/catalog-list/catalog-list'
 import catalogFilter from '../blocks/catalog-filter/catalog-filter'
 import productSlider from '../blocks/product-slider/product-slider'
 import catalogControl from '../blocks/catalog-control/catalog-control'
+import catalogCategories from '../blocks/catalog-categories/catalog-categories'
 
 document.addEventListener('DOMContentLoaded', function () {
   header()
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   catalogList()
   catalogFilter()
   catalogControl()
+  catalogCategories()
   productSlider()
   uiInput()
   uiRange()
