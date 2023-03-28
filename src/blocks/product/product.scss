@@ -274,6 +274,31 @@
       font-size: 16px;
     }
   }
+  &__details {
+    ul,
+    ol,
+    p {
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
+    ul,
+    ol {
+      li {
+        ul,
+        ol,
+        p {
+          margin-top: 0.8em;
+        }
+      }
+    }
+    ul {
+      @extend .ui-ul;
+    }
+    ol {
+      @extend .ui-ol;
+    }
+  }
   &__descr {
     font-size: 16px;
   }
@@ -361,9 +386,22 @@
         gap: 25px;
         margin-top: auto;
         justify-content: space-between;
+        @include media-laptop {
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+        @include media-tablet {
+          display: grid;
+        }
       }
       &__price {
         font-size: 28px;
+        @include media-laptop {
+          font-size: 26px;
+        }
+        @include media-tablet {
+          font-size: 22px;
+        }
       }
       &__details {
         grid-column: 1/-1;

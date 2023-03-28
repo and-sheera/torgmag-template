@@ -12,7 +12,7 @@ mixin product-slider(mods)
 
   .product-slider(class=allMods)&attributes(attributes)
     .swiper-wrapper
-      -for(let i=0; i<5; i++)
+      -for(let i=0; i<3; i++)
         +product.swiper-slide
     +ui-swiper-buttons('product-slider')
     block

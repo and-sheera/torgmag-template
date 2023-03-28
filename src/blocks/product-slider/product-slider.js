@@ -1,8 +1,8 @@
 import Swiper from 'swiper/bundle'
 
 export default function productSlider() {
-  const wrapper = document.querySelector('.product-slider')
-  if (wrapper) {
+  for (const wrapper of document.querySelectorAll('.product-slider')) {
+    const isSizeXs = wrapper.classList.contains('product-slider--xs')
     const articleSlider = new Swiper(wrapper, {
       watchSlidesProgress: true,
       slidesPerView: 1.2,
@@ -10,16 +10,16 @@ export default function productSlider() {
       breakpoints: {
         767: {
           slidesPerView: 2,
-          spaceBetween: 30
+          spaceBetween: isSizeXs ? 15 : 30
         },
         1440: {
           slidesPerView: 3,
-          spaceBetween: 40
+          spaceBetween: isSizeXs ? 15 : 40
         }
       },
       navigation: {
-        nextEl: '.product-slider .ui-swiper-buttons .swiper-button-next',
-        prevEl: '.product-slider .ui-swiper-buttons .swiper-button-prev'
+        nextEl: wrapper.querySelector('.product-slider .ui-swiper-buttons .swiper-button-next'),
+        prevEl: wrapper.querySelector('.product-slider .ui-swiper-buttons .swiper-button-prev')
       }
     })
   }

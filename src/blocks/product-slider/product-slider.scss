@@ -33,4 +33,31 @@
       opacity: 0;
     }
   }
+  &--xs {
+    .product {
+      padding: 20px 15px;
+      &__line {
+        margin-bottom: 10px;
+      }
+      &__img {
+        width: 120px;
+        height: 160px;
+        margin-bottom: 15px;
+        @include media-laptop {
+          margin-bottom: 20px;
+        }
+      }
+      &__name {
+        font-size: 17px;
+        margin-bottom: 20px;
+      }
+      &__bottom {
+        display: grid;
+        gap: 15px;
+      }
+      &__price {
+        font-size: 19px;
+      }
+    }
+  }
 }

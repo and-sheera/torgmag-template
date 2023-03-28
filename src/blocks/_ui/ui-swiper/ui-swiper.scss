@@ -42,6 +42,9 @@
             color: $grey80;
           }
         }
+        &.swiper-button-lock {
+          display: none;
+        }
       }
     }
     &--blue {
