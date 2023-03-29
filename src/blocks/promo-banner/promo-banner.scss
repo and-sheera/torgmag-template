@@ -1,0 +1,19 @@
+.promo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @include media-tablet {
+    display: none;
+  }
+  img {
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  &--mobile {
+    display: none;
+    @include media-tablet {
+      display: flex;
+    }
+  }
+}

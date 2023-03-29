@@ -11,7 +11,13 @@ block content
       +breadcrumbs-item('Стеллажи торговые и складские', '#')
       +breadcrumbs-item('Торговые стеллажи', '#')
       +breadcrumbs-item('Стеллаж торговый пристенный с полками 1650')
-    +section('--mt0, --ov-h')
+    +section('--mt0')
+      .inner
+        +promo-banner
+          img(src='../../images/promo-banner.jpg' alt='')
+        +promo-banner('--mobile')
+          img(src='../../images/promo-banner-mob.jpg' alt='')
+    +section('--mt25, --ov-h')
       .inner
         +main-aside('--xl-gap')
           +catalog('main-aside')
