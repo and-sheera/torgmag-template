@@ -86,6 +86,15 @@
             margin-top: 10px;
           }
         }
+        &__discount {
+          top: 20px;
+          right: unset;
+          left: 20px;
+          @include media-tablet {
+            top: 10px;
+            left: 10px;
+          }
+        }
       }
     }
   }
@@ -122,8 +131,9 @@
         &__line {
           justify-content: flex-start;
           margin-bottom: 10px;
-          @include media-tablet {
-            justify-content: space-between;
+          gap: 25px;
+          @include media-laptop {
+            gap: 20px;
           }
         }
         &__bottom {
@@ -135,6 +145,15 @@
             grid-column: unset;
             grid-row: unset;
             gap: 10px;
+          }
+        }
+        &__discount {
+          position: relative;
+          top: unset;
+          right: unset;
+          @include media-laptop {
+            padding: 4px 6px;
+            font-size: 13px;
           }
         }
       }

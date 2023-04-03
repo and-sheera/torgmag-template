@@ -36,16 +36,20 @@ mixin product(mods, type)
   form.product(class=allMods)&attributes(attributes)
     case type
       when 'cart'
+        .product__discount -35%
         .product__img: img(src='../../images/catalog-inner-1.jpg' alt='')
         .product__info
           a.product__name(href='#') Крючок для перфорации одинарный 100мм d-4мм, цинк арт. SH504Z-100SX
           .product__price 12 489 ₽
+            span.product__price-old 10 999 ₽
         +product__quantity
         button.product__delete(type='button')
           +svg('icon_plus')
         block
       when 'inner'
-        .product__img: img(src='../../images/catalog-inner-1.jpg' alt='')
+        .product__img
+          .product__discount -35%
+          img(src='../../images/catalog-inner-1.jpg' alt='')
         .product__info
           .product__line
             .product__art Арт. L013414
@@ -61,6 +65,7 @@ mixin product(mods, type)
                       .product__prop !{prop}
           .product__main
             .product__price 12 489 ₽
+              span.product__price-old 10 999 ₽
             .product__control
               button.product__favorite(type='button')
                 +svg('icon_heart')
@@ -87,6 +92,7 @@ mixin product(mods, type)
       default
         .product__img: img(src='../../images/catalog-inner-1.jpg' alt='')
         .product__line
+          .product__discount -35%
           .product__art Арт. L013414
           .product__status.product__status--in-stock В наличии
         a.product__name(href='#') Крючок для перфорации одинарный 100мм d-4мм, цинк арт. SH504Z-100SX
@@ -94,6 +100,7 @@ mixin product(mods, type)
           .product__descr Высота: 1650мм. Длина: 1000 и 700мм. Глубина 500мм. Полки: 1х500мм. 2х400мм. 2х320мм. Цвет стеллажа: Белый. Стеллаж просчитан с одной стойкой для удобства расчета.Для завершения линии стеллажей необходима дополнительная боковая стойка и кронштейны полок стоимостью 940р Возможно укомплектовать стеллажи крючками дополнительным навесным торговым оборудованием.
         .product__bottom
           .product__price 12 489 ₽
+            span.product__price-old 10 999 ₽
           .product__control
             button.product__favorite(type='button')
               +svg('icon_heart')

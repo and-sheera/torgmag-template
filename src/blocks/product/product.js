@@ -26,28 +26,20 @@ export default function product() {
       const img = buyButton.closest('.product').querySelector('img')
       const cartButton = document.querySelector('.header__cart .cart__button')
       if (img) {
-        const animImg = document.createElement('img')
-        animImg.className = 'product__img-anim'
-        animImg.src = img.src
-        animImg.style.top = `${img.getBoundingClientRect().top}px`
-        animImg.style.left = `${img.getBoundingClientRect().left}px`
-        animImg.style.width = `${img.offsetWidth}px`
-        animImg.style.height = `${img.offsetHeight}px`
-        document.body.append(animImg)
-        setTimeout(() => {
-          animImg.classList.add('translate')
-          animImg.style.top = `${cartButton.getBoundingClientRect().top + cartButton.offsetHeight / 2}px`
-          animImg.style.left = `${cartButton.getBoundingClientRect().left + cartButton.offsetWidth / 2}px`
-          setTimeout(() => {
-            animImg.remove()
-          }, 550)
-        }, 300)
+        productAnimation(img, cartButton)
       }
     }
 
     const favButton = event.target.closest('.product__favorite')
     if (favButton) {
       favButton.classList.toggle('active')
+      if (favButton.classList.contains('active')) {
+        const img = favButton.closest('.product').querySelector('img')
+        const favoriteButton = document.querySelector('.header__favorites .favorites__button')
+        if (img) {
+          productAnimation(img, favoriteButton)
+        }
+      }
     }
   })
 
@@ -57,4 +49,23 @@ export default function product() {
       input.value = Math.max(1, Number.parseInt(input.value) || 1)
     }
   })
+}
+
+function productAnimation(img, target) {
+  const animImg = document.createElement('img')
+  animImg.className = 'product__img-anim'
+  animImg.src = img.src
+  animImg.style.top = `${img.getBoundingClientRect().top}px`
+  animImg.style.left = `${img.getBoundingClientRect().left}px`
+  animImg.style.width = `${img.offsetWidth}px`
+  animImg.style.height = `${img.offsetHeight}px`
+  document.body.append(animImg)
+  setTimeout(() => {
+    animImg.classList.add('translate')
+    animImg.style.top = `${target.getBoundingClientRect().top + target.offsetHeight / 2}px`
+    animImg.style.left = `${target.getBoundingClientRect().left + target.offsetWidth / 2}px`
+    setTimeout(() => {
+      animImg.remove()
+    }, 550)
+  }, 300)
 }

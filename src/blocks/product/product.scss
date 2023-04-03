@@ -97,6 +97,8 @@
     }
   }
   &__price {
+    display: grid;
+    gap: 2px;
     font-weight: 700;
     font-size: 20px;
     color: $blue;
@@ -107,6 +109,12 @@
     }
     @include media-tablet {
       font-size: 18px;
+    }
+    &-old {
+      font-weight: 500;
+      font-size: 67%;
+      color: $grey80;
+      text-decoration: line-through;
     }
   }
   &__button {
@@ -317,6 +325,24 @@
       gap: 10px;
     }
   }
+  &__discount {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 8px;
+    background: $red90;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+    @include media-tablet {
+      top: 15px;
+      right: 15px;
+      padding: 4px 6px;
+      font-size: 13px;
+    }
+  }
   &--inner {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -346,6 +372,9 @@
         img {
           border-radius: inherit;
         }
+      }
+      &__img {
+        position: relative;
       }
       &__img-anim {
         border: 0;
@@ -408,6 +437,17 @@
         grid-column: 1/-1;
         &:not(:last-child) {
           margin-bottom: 15px;
+        }
+      }
+      &__discount {
+        top: 15px;
+        right: unset;
+        left: 15px;
+        @include media-tablet {
+          top: unset;
+          right: 12px;
+          bottom: 12px;
+          left: unset;
         }
       }
     }

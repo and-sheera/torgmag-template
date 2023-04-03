@@ -1,0 +1,15 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'personal'
+    const pageTitle = 'Персональный раздел'
+
+block content
+  main
+    +breadcrumbs('--page-head')
+      +breadcrumbs-item('Мой кабинет')
+    +page-head('../../images/page-head_catalog.jpg', pageTitle)
+    +section
+      .inner
+        +personal

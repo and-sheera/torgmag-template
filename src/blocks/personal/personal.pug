@@ -1,0 +1,45 @@
+mixin personal(mods)
+  -
+    const baseName = 'personal'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+    const data = [
+      {
+        icon: 'icon_orders',
+        text: 'Текущие заказы'
+      },
+      {
+        icon: 'icon_personal-data',
+        text: 'Личные данные'
+      },
+      {
+        icon: 'icon_history',
+        text: 'История заказов'
+      },
+      {
+        icon: 'icon_profile',
+        text: 'Профили заказов'
+      },
+      {
+        icon: 'icon_email',
+        text: 'Подписки'
+      },
+      {
+        icon: 'icon_heart',
+        text: 'Избранное'
+      }
+    ]
+
+  .personal(class=allMods)&attributes(attributes)
+    each item in data
+      a.personal__item(href='#')
+        .personal__icon: +svg(item.icon)
+        .personal__name !{item.text}
+    block

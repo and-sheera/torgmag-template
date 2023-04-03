@@ -1,0 +1,62 @@
+.personal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  max-width: 800px;
+  margin: 0 auto;
+  @include media-laptop {
+    gap: 20px;
+  }
+  @include media-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  &__item {
+    display: grid;
+    gap: 20px;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    padding: 25px 20px;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 3px 36px rgb(0 0 0 / 0.03);
+    border-radius: 10px;
+    @include media-tablet {
+      padding: 20px 15px;
+      gap: 15px;
+    }
+    @include media-hover {
+      transform: translateY(-5px);
+      border-color: $red;
+    }
+  }
+  &__icon {
+    display: flex;
+    width: 65px;
+    height: 65px;
+    color: $red;
+    background: rgb(239 242 244 / 0.6);
+    border-radius: 50%;
+    @include media-tablet {
+      width: 50px;
+      height: 50px;
+    }
+    .svg {
+      width: 35px;
+      height: 35px;
+      margin: auto;
+      @include media-tablet {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+  &__name {
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    @include media-tablet {
+      font-size: 15px;
+    }
+  }
+}

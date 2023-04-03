@@ -259,6 +259,20 @@
           margin: 0 auto;
         }
       }
+      &__discount {
+        top: 15px;
+        right: unset;
+        left: 15px;
+        @include media-laptop {
+          top: 10px;
+          left: 10px;
+          font-size: 13px;
+          padding: 4px 6px;
+        }
+        @include media-tablet {
+          font-size: 14px;
+        }
+      }
     }
   }
 }
