@@ -24,9 +24,8 @@ export default function product() {
     const buyButton = event.target.closest('.product__button')
     if (buyButton) {
       const img = buyButton.closest('.product').querySelector('img')
-      const cartButton = document.querySelector('.header__cart .cart__button')
       if (img) {
-        productAnimation(img, cartButton)
+        productAnimation(img, '.header__cart .cart__button')
       }
     }
 
@@ -35,9 +34,8 @@ export default function product() {
       favButton.classList.toggle('active')
       if (favButton.classList.contains('active')) {
         const img = favButton.closest('.product').querySelector('img')
-        const favoriteButton = document.querySelector('.header__favorites .favorites__button')
         if (img) {
-          productAnimation(img, favoriteButton)
+          productAnimation(img, '.header__favorites .favorites__button')
         }
       }
     }
@@ -51,7 +49,7 @@ export default function product() {
   })
 }
 
-function productAnimation(img, target) {
+function productAnimation(img, targetSelector) {
   const animImg = document.createElement('img')
   animImg.className = 'product__img-anim'
   animImg.src = img.src
@@ -61,6 +59,7 @@ function productAnimation(img, target) {
   animImg.style.height = `${img.offsetHeight}px`
   document.body.append(animImg)
   setTimeout(() => {
+    const target = document.querySelector(targetSelector)
     animImg.classList.add('translate')
     animImg.style.top = `${target.getBoundingClientRect().top + target.offsetHeight / 2}px`
     animImg.style.left = `${target.getBoundingClientRect().left + target.offsetWidth / 2}px`
