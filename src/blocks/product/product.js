@@ -60,7 +60,8 @@ export default function product() {
     }
   })
 
-  productSlider()
+  window.initAllProductSlider = initAllProductSlider
+  window.initAllProductSlider()
 }
 
 function productAnimation(img, targetSelector) {
@@ -83,30 +84,32 @@ function productAnimation(img, targetSelector) {
   }, 300)
 }
 
-function productSlider() {
+function initAllProductSlider() {
   for (const sliderContainer of document.querySelectorAll('.product__slider')) {
-    const slider = new Swiper(sliderContainer, {
-      watchSlidesProgress: true,
-      slidesPerView: 1,
-      simulateTouch: false,
-      pagination: {
-        el: sliderContainer.querySelector('.ui-swiper-bullets .swiper-pagination'),
-        type: 'bullets'
-      }
-    })
+    if (!sliderContainer.classList.contains('swiper-initialized')) {
+      const slider = new Swiper(sliderContainer, {
+        watchSlidesProgress: true,
+        slidesPerView: 1,
+        simulateTouch: false,
+        pagination: {
+          el: sliderContainer.querySelector('.ui-swiper-bullets .swiper-pagination'),
+          type: 'bullets'
+        }
+      })
 
-    const slidersNumber = sliderContainer.querySelectorAll('.product__img').length
+      const slidersNumber = sliderContainer.querySelectorAll('.product__img').length
 
-    sliderContainer.addEventListener('mousemove', function (event) {
-      const width = sliderContainer.offsetWidth
-      const sectionWidth = width / slidersNumber
-      const localX = event.clientX - sliderContainer.getBoundingClientRect().left
-      const nextActiveIndex = Math.trunc(localX / sectionWidth)
-      if (nextActiveIndex !== slider.activeIndex) slider.slideTo(nextActiveIndex, 0)
-    })
+      sliderContainer.addEventListener('mousemove', function (event) {
+        const width = sliderContainer.offsetWidth
+        const sectionWidth = width / slidersNumber
+        const localX = event.clientX - sliderContainer.getBoundingClientRect().left
+        const nextActiveIndex = Math.trunc(localX / sectionWidth)
+        if (nextActiveIndex !== slider.activeIndex) slider.slideTo(nextActiveIndex, 0)
+      })
 
-    sliderContainer.addEventListener('mouseout', function () {
-      slider.slideTo(0, 0)
-    })
+      sliderContainer.addEventListener('mouseout', function () {
+        slider.slideTo(0, 0)
+      })
+    }
   }
 }
