@@ -46,15 +46,21 @@
             margin-bottom: 5px;
           }
         }
-        &__img {
+        &__slider {
           width: 155px;
-          height: 205px;
           grid-row: 1/-1;
           margin-bottom: 0;
+          align-self: center;
           @include media-tablet {
             width: 93px;
-            height: 124px;
             grid-row: 1/4;
+          }
+        }
+        .swiper-slide.product__img,
+        &__img {
+          height: 205px;
+          @include media-tablet {
+            height: 124px;
           }
         }
         &__line {
@@ -119,7 +125,7 @@
             text-align: left;
           }
         }
-        &__img {
+        &__slider {
           display: none;
         }
         &__name {

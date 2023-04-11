@@ -12,6 +12,8 @@
     padding: 20px 15px;
   }
   &__img-anim,
+  .swiper-slide.product__img,
+  &__slider,
   &__img {
     width: 218px;
     height: 290px;
@@ -26,6 +28,28 @@
       height: 100%;
       object-fit: contain;
       border-radius: 5px;
+    }
+  }
+  &__slider {
+    position: relative;
+    height: auto;
+    padding-bottom: 10px;
+    overflow: hidden;
+    .swiper-slide.product {
+      &__img {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__ui-swiper-bullets {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    .swiper-pagination-horizontal .swiper-pagination-bullet {
+      width: 7px;
+      height: 7px;
+      margin: 0 3px;
     }
   }
   &__img-anim {
@@ -329,6 +353,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    z-index: 10;
     padding: 5px 8px;
     background: $red90;
     color: #fff;
@@ -343,14 +368,27 @@
       font-size: 13px;
     }
   }
+  &__images {
+    display: grid;
+    // grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+  }
+  // &__pic {
+  //   width: 64px;
+  //   height: 64px;
+  // }
   &--inner {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 360px 1fr;
     gap: 30px;
     padding: 0;
     background: transparent;
     border: 0;
     border-radius: 0;
+    @include media-laptop {
+      grid-template-columns: 280px 1fr;
+    }
     @include media-tablet {
       grid-template-columns: minmax(0, 1fr);
     }

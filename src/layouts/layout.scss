@@ -118,3 +118,8 @@ figure {
     height: auto;
   }
 }
+.fancybox {
+  &__backdrop {
+    opacity: 0.8;
+  }
+}

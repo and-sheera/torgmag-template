@@ -47,9 +47,10 @@ mixin product(mods, type)
           +svg('icon_plus')
         block
       when 'inner'
-        .product__img
-          .product__discount -35%
-          img(src='../../images/catalog-inner-1.jpg' alt='')
+        .product__view
+          .product__img
+            .product__discount -35%
+            img(src='../../images/catalog-inner-1.jpg' alt='')
         .product__info
           .product__line
             .product__art Арт. L013414
@@ -73,6 +74,11 @@ mixin product(mods, type)
               button.product__button(type='button')
                 +svg('icon_cart')
                 | В корзину
+        .product__images
+          -for(let i=0; i<5; i++)
+            a.product__pic(data-fancybox='product-gallery' href='../../images/catalog-inner-1.jpg'): img(src='../../images/catalog-inner-1.jpg' alt='')
+            a.product__pic(data-fancybox='product-gallery' href='../../images/catalog-inner-2.jpg'): img(src='../../images/catalog-inner-2.jpg' alt='')
+            a.product__pic(data-fancybox='product-gallery' href='../../images/catalog-inner-3.jpg'): img(src='../../images/catalog-inner-3.jpg' alt='')
         .product__details
           .product__section
             .product__section-name Описание
@@ -90,7 +96,13 @@ mixin product(mods, type)
                     .product__prop !{prop}
         block
       default
-        .product__img: img(src='../../images/catalog-inner-1.jpg' alt='')
+        //- .product__img: img(src='../../images/catalog-inner-1.jpg' alt='')
+        .product__slider
+          .swiper-wrapper
+            .product__img.swiper-slide: img(src='../../images/catalog-inner-1.jpg' alt='')
+            .product__img.swiper-slide: img(src='../../images/catalog-inner-2.jpg' alt='')
+            .product__img.swiper-slide: img(src='../../images/catalog-inner-3.jpg' alt='')
+          +ui-swiper-bullets('product')
         .product__line
           .product__discount -35%
           .product__art Арт. L013414

@@ -1,4 +1,26 @@
+import Swiper from 'swiper/bundle'
+import { Fancybox } from '@fancyapps/ui'
+
 export default function product() {
+  Fancybox.bind('[data-fancybox="product-gallery"]', {
+    hideScrollbar: false,
+    Toolbar: {
+      display: {
+        // left: ["infobar"],
+        // middle: [
+        //   "zoomIn",
+        //   "zoomOut",
+        //   "toggle1to1",
+        //   "rotateCCW",
+        //   "rotateCW",
+        //   "flipX",
+        //   "flipY",
+        // ],
+        right: ['close']
+      }
+    }
+  })
+
   document.addEventListener('click', (event) => {
     const plusButton = event.target.closest('[data-quantity-plus]')
     if (plusButton) {
@@ -47,6 +69,8 @@ export default function product() {
       input.value = Math.max(1, Number.parseInt(input.value) || 1)
     }
   })
+
+  productSlider()
 }
 
 function productAnimation(img, targetSelector) {
@@ -67,4 +91,32 @@ function productAnimation(img, targetSelector) {
       animImg.remove()
     }, 550)
   }, 300)
+}
+
+function productSlider() {
+  for (const sliderContainer of document.querySelectorAll('.product__slider')) {
+    const slider = new Swiper(sliderContainer, {
+      watchSlidesProgress: true,
+      slidesPerView: 1,
+      simulateTouch: false,
+      pagination: {
+        el: sliderContainer.querySelector('.ui-swiper-bullets .swiper-pagination'),
+        type: 'bullets'
+      }
+    })
+
+    const slidersNumber = sliderContainer.querySelectorAll('.product__img').length
+
+    sliderContainer.addEventListener('mousemove', function (event) {
+      const width = sliderContainer.offsetWidth
+      const sectionWidth = width / slidersNumber
+      const localX = event.clientX - sliderContainer.getBoundingClientRect().left
+      const nextActiveIndex = Math.trunc(localX / sectionWidth)
+      if (nextActiveIndex !== slider.activeIndex) slider.slideTo(nextActiveIndex, 0)
+    })
+
+    sliderContainer.addEventListener('mouseout', function () {
+      slider.slideTo(0, 0)
+    })
+  }
 }
