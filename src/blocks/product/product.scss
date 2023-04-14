@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 25px 20px;
+  padding: 20px;
   background: #fff;
   border: 1px solid #ebebeb;
   border-radius: 10px;
@@ -15,9 +15,9 @@
   .swiper-slide.product__img,
   &__slider,
   &__img {
-    width: 218px;
-    height: 290px;
-    margin: 0 auto 25px;
+    width: 250px;
+    height: 333px;
+    margin: 0 auto 20px;
     flex-shrink: 0;
     @include media-tablet {
       width: 190px;
@@ -33,7 +33,7 @@
   &__slider {
     position: relative;
     height: auto;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     overflow: hidden;
     .swiper-slide.product {
       &__img {
@@ -78,7 +78,7 @@
     gap: 40px;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     font-size: 14px;
     color: $grey80;
   }
@@ -100,7 +100,7 @@
   }
   &__name {
     display: block;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     font-size: 18px;
     transition-property: color;
     @include media-laptop {
