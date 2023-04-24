@@ -80,6 +80,7 @@ figure {
   font-family: $font;
   line-height: 1.3;
   color: $black;
+  overflow: hidden;
   @include media-tablet {
     padding-top: var(--header-height, 59px);
   }

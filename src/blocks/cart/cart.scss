@@ -251,8 +251,24 @@
         max-width: 450px;
         margin-bottom: 10px;
       }
-      &__price {
+      &__prices {
+        display: flex;
+        align-items: baseline;
         margin-top: auto;
+        gap: 25px;
+      }
+      &__price {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        &-label {
+          margin-bottom: 5px;
+          font-size: 13px;
+          color: $grey80;
+          @include media-tablet {
+            margin-bottom: 2px;
+          }
+        }
       }
       &__quantity {
         @include media-tablet {

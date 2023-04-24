@@ -35,9 +35,14 @@ export default function product() {
 
     const buyButton = event.target.closest('.product__button')
     if (buyButton) {
+      buyButton.classList.add('product__button--bought')
       const img = buyButton.closest('.product').querySelector('img')
       if (img) {
         productAnimation(img, '.header__cart .cart__button')
+      }
+
+      if (buyButton.dataset.textEnd && buyButton.lastChild) {
+        buyButton.lastChild.textContent = buyButton.dataset.textEnd
       }
     }
 

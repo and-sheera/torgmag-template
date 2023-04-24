@@ -13,6 +13,8 @@ header.header
           a(href='#') Доставка и&nbsp;оплата
         li.header__item
           a(href='#') Наши гарантии и&nbsp;сервис
+        li.header__item
+          a(href='#') Контакты
       .header__city
         select(name='city' data-ts-select)
           option(selected) Воронеж
@@ -25,6 +27,13 @@ header.header
           option(selected) ул. Остужева, 47
           option ул. Остужева, 48
           option ул. Остужева, 49
+      .header__login
+        button.header__login-btn
+          +svg('icon_profile')
+          .header__login-text Авторизация
+        .header__login-container
+          a.header__login-link(href='#') Вход
+          a.header__login-link(href='#') Регистрация
   .header__main
     .inner
       a.header__logo(href='/')

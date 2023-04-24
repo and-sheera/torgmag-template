@@ -17,7 +17,7 @@ mixin product(mods, type)
       ],
       [
         'Габариты:',
-        '1650х1000х500,1650х700х500'
+        '1650х1000х500,1650х700'
       ],
       [
         'Материал:',
@@ -40,8 +40,15 @@ mixin product(mods, type)
         .product__img: img(src='../../images/catalog-inner-1.jpg' alt='')
         .product__info
           a.product__name(href='#') Крючок для перфорации одинарный 100мм d-4мм, цинк арт. SH504Z-100SX
-          .product__price 12 489 ₽
-            span.product__price-old 10 999 ₽
+          .product__prices
+            .product__price-item
+              .product__price-label 1шт.
+              .product__price 12 489 ₽
+                span.product__price-old 10 999 ₽
+            .product__price-item
+              .product__price-label Итого
+              .product__price 12 489 ₽
+                span.product__price-old 10 999 ₽
         +product__quantity
         button.product__delete(type='button')
           +svg('icon_plus')
@@ -71,7 +78,7 @@ mixin product(mods, type)
               button.product__favorite(type='button')
                 +svg('icon_heart')
               +product__quantity
-              button.product__button(type='button')
+              button.product__button(type='button' data-text-start='В корзину' data-text-end='В корзине')
                 +svg('icon_cart')
                 | В корзину
         .product__images
@@ -119,6 +126,13 @@ mixin product(mods, type)
             +product__quantity
             button.product__button(type='button')
               +svg('icon_cart')
+        .product__details.product__details--hidden
+          .product__section-name Характеристики
+          .product__props
+            each item in props
+              .product__prop-line
+                each prop in item
+                  .product__prop !{prop}
 
 mixin product__quantity
   .product__quantity

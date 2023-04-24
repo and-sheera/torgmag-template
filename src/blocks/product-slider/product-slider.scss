@@ -1,5 +1,6 @@
 .product-slider {
   position: relative;
+  z-index: 10;
   @include media-laptop {
     padding: 0 10px;
   }

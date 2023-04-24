@@ -14,6 +14,12 @@ function inputMask() {
       mask: '+{7} (000) 000-00-00'
     })
   }
+  const telInput = document.querySelector('input[name="ORDER_PROP_3"]')
+  if (telInput) {
+    IMask(telInput, {
+      mask: '+{7} (000) 000-00-00'
+    })
+  }
 }
 
 function validation() {

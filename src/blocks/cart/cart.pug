@@ -22,7 +22,8 @@ mixin cart(mods)
             +ui-h2('Ваша корзина', 'cart')
             .cart__head-count 5
           button.cart__close
-            +svg('icon_arrow-right')
+            +svg('icon_cross')
+            //- +svg('icon_arrow-right')
         .cart__list
           -for(let i=0; i<7; i++)
             +product('cart', 'cart')

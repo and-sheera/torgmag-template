@@ -73,12 +73,12 @@
       padding: 30px 0;
     }
   }
-  &--ov-h {
-    overflow: hidden;
-    &:not(.section--bg) {
-      padding: 1px 0;
-    }
-  }
+  // &--ov-h {
+  //   overflow: hidden;
+  //   &:not(.section--bg) {
+  //     padding: 1px 0;
+  //   }
+  // }
   &-head {
     display: flex;
     align-items: center;
