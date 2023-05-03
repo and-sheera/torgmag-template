@@ -20,6 +20,8 @@ export default function catalog() {
           const activeInner = catalogElement.querySelector('.catalog__inner.active')
           if (activeInner && inner !== activeInner) activeInner.classList.remove('active')
           if (inner) inner.classList.add('active')
+
+          catalogElement.style.setProperty('--inner-top', `${window.scrollY > document.querySelector('.header').offsetHeight ? Math.abs(catalogElement.getBoundingClientRect().top) + document.querySelector('.header').offsetHeight / 2 : 0}px`)
         }
       })
     }

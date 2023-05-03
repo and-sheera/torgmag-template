@@ -98,7 +98,7 @@
   &__inner {
     display: none;
     position: absolute;
-    top: 0;
+    top: var(--inner-top, 0);
     left: calc(100% + 20px);
     grid-template-columns: repeat(3, 1fr);
     gap: 30px 25px;
