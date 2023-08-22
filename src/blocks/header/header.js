@@ -92,8 +92,10 @@ function search() {
       }
     })
     input.addEventListener('blur', function () {
-      results.classList.remove('active')
-      searchBlock.classList.remove('active')
+      setTimeout(() => {
+        results.classList.remove('active')
+        searchBlock.classList.remove('active')
+      }, 50)
     })
     input.addEventListener('focus', function () {
       if (this.value !== '') {
