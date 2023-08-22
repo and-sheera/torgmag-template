@@ -85,16 +85,20 @@ function search() {
     input.addEventListener('input', function () {
       if (this.value === '') {
         results.classList.remove('active')
+        searchBlock.classList.remove('active')
       } else {
         results.classList.add('active')
+        searchBlock.classList.add('active')
       }
     })
     input.addEventListener('blur', function () {
       results.classList.remove('active')
+      searchBlock.classList.remove('active')
     })
     input.addEventListener('focus', function () {
       if (this.value !== '') {
         results.classList.add('active')
+        searchBlock.classList.add('active')
       }
     })
   }
