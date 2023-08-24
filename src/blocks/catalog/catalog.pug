@@ -84,12 +84,11 @@ mixin catalog(mods, type)
                 include ../../images/catalog-1.svg
               //- .catalog__icon: img(src=item.icon alt='')
               .catalog__name !{item.name}
-      .catalog__inners
       -for(let i=0; i<16; i++)
         .catalog__inner
           .catalog__back
             +ui-button('Назад', '--text', 'icon_s-arrow-left')
-          -for(let i=0; i<5; i++)
+          -for(let i=0; i<1; i++)
             each item in inner
               a.catalog__inner-item(href='#')
                 .catalog__img: img(src=item.img alt='')

@@ -278,6 +278,7 @@
       border-radius: 4px;
       font: inherit;
       @include media-tablet {
+        left: 0;
         padding: 5px 0;
       }
       .option {
@@ -882,7 +883,8 @@
           background-color: #d0d0d0;
           border-radius: 5px;
         }
-        &::before {
+        &::before,
+        &::after {
           content: none;
         }
         &-item {

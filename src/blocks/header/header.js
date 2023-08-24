@@ -36,7 +36,7 @@ function fixedHeader() {
   const header = document.querySelector('.header')
   let headerHeight = header.offsetHeight
   window.addEventListener('load', () => { headerHeight = header.offsetHeight })
-  document.addEventListener('scroll', () => {
+  document.addEventListener('scroll', (event) => {
     if (window.innerWidth > 767) {
       let timeoutID
       if (window.scrollY > headerHeight) {
@@ -107,7 +107,10 @@ function search() {
 }
 
 function headerDimensions() {
-  const headerHeight = document.querySelector('.header').offsetHeight
+  const header = document.querySelector('.header')
+  if (header.classList.contains('header--burger')) return
+
+  const headerHeight = header.offsetHeight
   document.documentElement.style.setProperty('--header-height', `${headerHeight}px`)
 
   const headerBotHeight = document.querySelector('.header__bot').offsetHeight

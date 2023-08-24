@@ -21,7 +21,15 @@ export default function catalog() {
           if (activeInner && inner !== activeInner) activeInner.classList.remove('active')
           if (inner) inner.classList.add('active')
 
-          catalogElement.style.setProperty('--inner-top', `${window.scrollY > document.querySelector('.header').offsetHeight ? Math.abs(catalogElement.getBoundingClientRect().top) + document.querySelector('.header').offsetHeight / 2 : 0}px`)
+          let top
+          const catalogTop = catalogElement.getBoundingClientRect().top
+          const headerHeight = document.querySelector('.header__bot').offsetHeight
+          if (catalogTop > 0) {
+            top = catalogTop > headerHeight ? 0 : (headerHeight - catalogTop) + 20
+          } else {
+            top = headerHeight + Math.abs(catalogTop) + 20
+          }
+          catalogElement.style.setProperty('--inner-top', `${top}px`)
         }
       })
     }
