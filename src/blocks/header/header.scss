@@ -15,6 +15,9 @@
     box-shadow: 0 3px 36px rgb(0 0 0 / 0.07);
   }
   &__m-info {
+    position: sticky;
+    top: 0;
+    z-index: 1005;
     order: -2;
     display: none;
     gap: 15px;
@@ -567,7 +570,7 @@
         @include media-tablet {
           display: block;
           position: sticky;
-          top: 10px;
+          top: 36px;
           z-index: 1000;
           margin-right: 0;
         }
@@ -975,7 +978,7 @@
     @include media-tablet {
       display: block;
       position: sticky;
-      top: 18px;
+      top: 43px;
       z-index: 1000;
     }
     span {
@@ -1097,7 +1100,7 @@
     gap: 20px;
     @include media-tablet {
       position: sticky;
-      top: 10px;
+      top: 36px;
       z-index: 1005;
       justify-self: end;
       gap: 15px;
